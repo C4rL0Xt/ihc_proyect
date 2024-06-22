@@ -1,0 +1,10 @@
+.courses-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.courses-list app-course-card {
+  flex: 1 1 calc(33.333% - 10px); /* Ajusta este valor según sea necesario */
+  box-sizing: border-box;
+}

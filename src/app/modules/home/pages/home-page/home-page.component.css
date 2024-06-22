@@ -1,0 +1,29 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.top-section > * {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.top-section > *:last-child {
+  margin-right: 0;
+}
+
+.bottom-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.bottom-section > * {
+  width: 100%;
+}

@@ -1,0 +1,126 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #1b3c84;
+  color: white;
+  font-family: 'Arial', sans-serif;
+}
+
+.header-left,
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo img {
+  height: 50px;
+}
+
+.header-opciones {
+  display: flex;
+  gap: 20px;
+  margin-left: 20px;
+}
+
+.header-opciones a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.header-opciones a:hover,
+.header-opciones a.active {
+  background-color: #e2a22b;
+  border-radius: 5px; /* Optional: add rounded corners */
+}
+
+.header-notification-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+.header-notification-button:hover .header-notification-icon {
+  filter: brightness(0) saturate(100%) hue-rotate(0deg) invert(0%);
+  /* Cambia el color de la imagen SVG a rojo en el hover */
+  filter: invert(47%) sepia(81%) saturate(5674%) hue-rotate(333deg) brightness(104%) contrast(97%);
+}
+.header-notification-icon {
+  height: 24px;
+}
+
+.header-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 20px;
+}
+
+.header-user-name {
+  display: none; /* Hidden by default for smaller screens */
+  font-size: 14px;
+}
+
+.header-user-icon {
+  height: 32px;
+}
+
+.header-logout {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.header-logout-icon {
+  height: 24px;
+}
+
+.header-logout-text {
+  display: none; /* Hidden by default for smaller screens */
+  font-size: 14px;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .header-opciones a {
+    font-size: 16px;
+  }
+
+  .header-user-name,
+  .header-logout-text {
+    display: block; /* Shown for larger screens */
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    flex-wrap: wrap;
+  }
+
+  .header-left,
+  .header-right {
+    flex: 1 1 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .header-opciones {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .header-opciones a {
+    font-size: 14px;
+  }
+}

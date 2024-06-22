@@ -1,0 +1,28 @@
+<div class="header">
+  <div class="header-left">
+    <div class="header-logo">
+      <img src="assets/images/fisilogo.jpg" alt="Logo">
+    </div>
+    <div class="header-opciones">
+      <a href="#" [ngClass]="{'active': selectedOption === 'home'}" (click)="selectOption('home')">Home</a>
+      <a href="#" [ngClass]="{'active': selectedOption === 'calendar'}" (click)="selectOption('calendar')">Calendar</a>
+      <a href="#" [ngClass]="{'active': selectedOption === 'cursos'}" (click)="selectOption('cursos')">Mis Cursos</a>
+      <a href="#" [ngClass]="{'active': selectedOption === 'chat'}" (click)="selectOption('chat')">Mi chat</a>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="header-notification">
+      <button class="header-notification-button">
+        <img src="assets/images/notificacion.svg" class="header-notification-icon" alt="Notification">
+      </button>
+    </div>
+    <div class="header-user">
+      <div class="header-user-name">Carlos Daniel Espinoza Ramirez</div>
+      <img class="header-user-icon" src="assets/images/user.svg" alt="User">
+    </div>
+    <div class="header-logout">
+      <img class="header-logout-icon" src="assets/images/logout.svg" alt="Logout">
+      <div class="header-logout-text">Salir</div>
+    </div>
+  </div>
+</div>
