@@ -1,0 +1,51 @@
+.layout {
+
+  display: grid;
+  grid-template-rows: repeat(3, 240px);
+  grid-template-columns: 580px;
+  gap: 30px 55px;
+}
+
+.caard {
+  border-radius: 15px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: double;
+  border-color: #c6d4ff;
+  border-radius: 15px;
+}
+
+.side-right {
+  flex: 1;
+}
+
+.side-left {
+  flex: 1;
+  text-align: right;
+}
+
+.header-icon {
+  width: 55px;
+}
+
+.header-title {
+  font-family: "Oxygen", sans-serif;
+}
+
+.mat-mdc-list-item-icon {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.scrollbar {
+  overflow-y: auto;
+  max-height: 240px;
+}
+
+.card-container {
+
+  padding-top: 30px;
+}

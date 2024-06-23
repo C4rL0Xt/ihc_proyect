@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+
+.caard {
+  border-radius: 15px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: double;
+  border-color: #c6d4ff;
+  border-radius: 15px;
+}
+
+.side-right {
+  flex: 1;
+}
+
+.side-left {
+  flex: 1;
+  text-align: right;
+}
+
+.header-icon {
+  width: 55px;
+}
+
+.header-title {
+  font-family: "Oxygen", sans-serif;
+}
+
+.mat-mdc-list-item-icon {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.content-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-element {
+  flex: 1;
+}
+
+.list-button {
+  flex: 1;
+  text-align: right;
+}

@@ -1,0 +1,127 @@
+.course-container {
+  padding: 16px;
+  background-color: #f5f5f5;
+
+  .toolbar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .cycle-select {
+    width: 200px;
+  }
+
+  .course-search {
+    width: 400px;
+  }
+
+  .course-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+
+    .course-card {
+      mat-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .course-avatar {
+          background-size: cover;
+          background-position: center;
+        }
+      }
+    }
+  }
+}
+
+.lav {
+  font-size: 18px;
+  margin: 0;
+  /* Eliminar cualquier margen que pueda estar causando espacio extra */
+  padding: 0;
+  /* Eliminar cualquier relleno adicional */
+
+}
+
+.container-filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  padding-bottom: 3%;
+  padding-top: 2%;
+}
+
+.example-card {
+  background-color: #ffffff;
+  height: 285px;
+  width: 310px;
+  border-radius: 30px;
+  border-color: #acacac;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.example-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.3);
+}
+
+.image-borde {
+  border-radius: 100%;
+}
+
+.actions-right {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 23px;
+  background-color: rgb(255, 255, 255);
+}
+
+.blanco {
+  background-color: #ffffff;
+}
+
+.custom-button {
+  background-color: rgb(94, 112, 229);
+  width: 100px;
+  font-size: 16px;
+  color: #f5f5f5 !important;
+  transition: background-color 0.3s ease;
+}
+
+.custom-button:hover {
+  background-color: rgb(128, 145, 255);
+}
+
+.custom-button:active {
+  background-color: #5c69f2;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  padding-left: 3%;
+}
+
+.container-title {
+  background-color: #5c69f2;
+  padding-top: 20px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.filtro {
+  padding-left: 60px;
+  width: 15%;
+}
+
+.busqueda {
+  width: 15%;
+}
+
+.cred {
+  padding-bottom: 2%;
+  background-color: #ffffff;
+}

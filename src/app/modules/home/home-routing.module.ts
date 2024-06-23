@@ -1,11 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomePageComponent } from './pages/home-page/home-page.component';
+
+import { DashboardPageComponent } from '../dashboard/pages/dashboard-page/dashboard-page.component';
+import { CursosPageComponent } from '../cursos/page/cursos-page/cursos-page.component';
+import { InicioPageComponent } from './pages/inicio-page/inicio-page/inicio-page.component';
 
 const routes: Routes = [
   {
-    path:'',
-    component: HomePageComponent
+    path: 'dashboard',
+    component: DashboardPageComponent,
+    loadChildren: () => import('../dashboard/dashboard.module').then(m => m.DashboardModule)
+  },
+  {
+    path: 'cursos',
+    component: CursosPageComponent,
+    loadChildren: () => import('../cursos/cursos.module').then(m => m.CursosModule)
+  }, {
+    path: 'hi',
+    component: InicioPageComponent
   }
 ];
 

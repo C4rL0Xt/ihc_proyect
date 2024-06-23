@@ -1,0 +1,42 @@
+<div class="container-filtros">
+  <mat-form-field class="filtro" appearance="outline">
+    <mat-label>Ciclo</mat-label>
+    <mat-select [(ngModel)]="selectedCycle">
+      <mat-option value="">Todos los ciclos</mat-option>
+      <mat-option value="ciclo1">Ciclo 1</mat-option>
+      <mat-option value="ciclo2">Ciclo 2</mat-option>
+      <mat-option value="ciclo3">Ciclo 3</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="busqueda" appearance="outline">
+    <mat-label>Curso</mat-label>
+    <input matInput type="text" [(ngModel)]="searchQuery" placeholder="Buscar curso">
+    <button mat-icon-button matSuffix>
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
+
+<div class="card-container">
+  <mat-card *ngFor="let course of filteredCourses(); let i = index" class="example-card" appearance="outlined">
+    <mat-card-header [ngStyle]="{'background-color': randomColors[i]}" class="container-title">
+      <mat-card-title-group>
+        <mat-card-title class="lav">{{ course.courseName }}</mat-card-title>
+        <mat-card-subtitle>{{ course.teacherName }}</mat-card-subtitle>
+        <div class="image-borde">
+          <img mat-card-md-image src={{course.teacherPhoto}} alt="Image of a Shiba Inu">
+        </div>
+        <h6></h6>
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content class="cred">
+      <p></p>
+      <p>Creditos: {{ course.credits }}</p>
+      <p>{{course.horario}}</p>
+    </mat-card-content>
+    <mat-card-actions class="actions-right">
+      <button mat-button class="custom-button">Ir</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

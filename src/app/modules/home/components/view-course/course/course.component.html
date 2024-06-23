@@ -1,0 +1,36 @@
+<mat-card class="caard" appearance="outlined">
+  <mat-card-header class="header">
+    <div class="side-right">
+      <h1 class="header-title">Mis Cursos</h1>
+    </div>
+    <div class="side-left">
+      <img class="header-icon" src="/assets/images/curso.png">
+    </div>
+  </mat-card-header>
+</mat-card>
+
+<section class="layout">
+  <div class="card-container" *ngFor="let course of filteredCourses(); let i = index">
+    <mat-card class="example-card" appearance="outlined">
+      <mat-card-header [ngStyle]="{'background-color': randomColors[i]}" class="container-title">
+        <mat-card-title-group>
+          <mat-card-title class="lav">{{ course.courseName }}</mat-card-title>
+          <mat-card-subtitle>{{ course.teacherName }}</mat-card-subtitle>
+          <div class="image-borde">
+            <img mat-card-md-image src={{course.teacherPhoto}} alt="Image of a Shiba Inu">
+          </div>
+          <h6></h6>
+        </mat-card-title-group>
+      </mat-card-header>
+      <mat-card-content class="cred">
+        <p></p>
+        <p>Creditos: {{ course.credits }}</p>
+        <p>{{course.horario}}</p>
+      </mat-card-content>
+      <mat-card-actions class="actions-right">
+        <button mat-button class="custom-button">Ir</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+</section>

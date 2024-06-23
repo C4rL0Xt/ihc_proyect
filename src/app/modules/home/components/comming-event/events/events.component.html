@@ -1,0 +1,23 @@
+<mat-card class="caard" appearance="outlined">
+  <mat-card-header class="header">
+    <div class="side-right">
+      <h1 class="header-title">Eventos proximos</h1>
+    </div>
+    <div class="side-left">
+      <img class="header-icon" src="/assets/images/curso.png">
+    </div>
+  </mat-card-header>
+</mat-card>
+
+<!-- event-calendar.component.html -->
+<div class="timeline-container">
+  <div class="timeline">
+    <div *ngFor="let event of events" class="timeline-event">
+      <div class="timeline-content">
+        <h2>{{ event.date }}</h2>
+        <h3>{{ event.title }}</h3>
+        <p>{{ event.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>
