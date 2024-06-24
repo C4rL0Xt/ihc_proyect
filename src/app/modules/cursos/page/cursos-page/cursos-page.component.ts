@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { Course, CoursesServiceService } from '../../servicios/courses-service.service';
 
 @Component({
@@ -13,24 +14,10 @@ export class CursosPageComponent implements OnInit {
   courses: Course[] = [];
   randomColors: string[] = [];
 
-  constructor(private courseService: CoursesServiceService) { }
+  constructor(private courseService: CoursesServiceService,private router:Router) { }
 
   ngOnInit(): void {
     this.courses = this.courseService.getCourses();
-    this.generateRandomColors();
-  }
-
-  generateRandomColors() {
-    for (let i = 0; i < this.courses.length; i++) {
-      this.randomColors.push(this.getRandomColor());
-    }
-  }
-
-  getRandomColor(): string {
-    const hue = Math.floor(Math.random() * 360);
-    const saturation = Math.floor(Math.random() * 31) + 60;
-    const lightness = Math.floor(Math.random() * 21) + 70;
-    return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
   }
 
   filteredCourses(): Course[] {
@@ -38,5 +25,9 @@ export class CursosPageComponent implements OnInit {
       (course.cycle === this.selectedCycle || this.selectedCycle === '') &&
       course.courseName.toLowerCase().includes(this.searchQuery.toLowerCase())
     );
+  }
+
+  goToDetails(course: Course): void {
+    this.router.navigate(['/home/cursos/detalles'], { state: { course } });
   }
 }

@@ -1,0 +1,55 @@
+.layout {
+  display: grid;
+  grid-template-areas:
+    "chat-contact chat-panel";
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 100%;
+  width: 100%;
+  height: calc(100vh - 75px);
+  /* Subtracting margins */
+  /* Adding padding to ensure margins are considered */
+  box-sizing: border-box;
+
+}
+
+.chat-contact {
+  margin: 0;
+  /* Removing default margin */
+  padding: 20px;
+  grid-area: chat-contact;
+  box-sizing: border-box;
+  /* Ensuring padding is included in the element's total width and height */
+}
+
+.chat-panel {
+  margin: 0;
+  /* Removing default margin */
+  padding: 20px;
+  grid-area: chat-panel;
+  box-sizing: border-box;
+  /* Ensuring padding is included in the element's total width and height */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 40% 60%;
+  }
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 50% 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .layout {
+    grid-template-areas:
+      "chat-contact"
+      "chat-panel";
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto;
+    height: auto;
+  }
+}

@@ -1,5 +1,4 @@
 .layout {
-
   display: grid;
   grid-template-rows: repeat(3, 240px);
   grid-template-columns: 580px;
@@ -46,6 +45,22 @@
 }
 
 .card-container {
-
   padding-top: 30px;
+}
+
+@media (max-width: 480px) {
+  .layout {
+    grid-template-columns: 100%;
+    gap: 15px;
+  }
+
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .side-right,
+  .side-left {
+    text-align: center;
+  }
 }

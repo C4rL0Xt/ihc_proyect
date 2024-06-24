@@ -9,12 +9,13 @@ import { Course, CoursesServiceService } from '../../servicios/courses-service.s
 })
 
 export class MainPageComponent implements OnInit {
-  courses: Course[] = [];
 
+  courses: Course[] = [];
+  randomColors: String[] = [];
+  
   constructor(private courseService: CoursesServiceService) { }
 
   ngOnInit(): void {
     this.courses = this.courseService.getCourses();
   }
-
 }

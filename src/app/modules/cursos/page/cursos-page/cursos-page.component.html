@@ -19,8 +19,8 @@
 </div>
 
 <div class="card-container">
-  <mat-card *ngFor="let course of filteredCourses(); let i = index" class="example-card" appearance="outlined">
-    <mat-card-header [ngStyle]="{'background-color': randomColors[i]}" class="container-title">
+  <mat-card *ngFor="let course of filteredCourses()" class="example-card" appearance="outlined">
+    <mat-card-header [ngStyle]="{'background-color': course.color}" class="container-title">
       <mat-card-title-group>
         <mat-card-title class="lav">{{ course.courseName }}</mat-card-title>
         <mat-card-subtitle>{{ course.teacherName }}</mat-card-subtitle>

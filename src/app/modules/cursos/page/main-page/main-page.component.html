@@ -3,11 +3,19 @@
     <mat-nav-list>
       <a mat-list-item routerLink="/home/cursos/all" routerLinkActive="active">Todos los Cursos</a>
       <a mat-list-item routerLink="/home/cursos/detalles" routerLinkActive="active">Detalles</a>
-      <div *ngFor="let course of courses">
-        <a mat-list-item [routerLink]="['/home/cursos/detalles', course.courseName]" routerLinkActive="active">
-          {{ course.courseName }}
-        </a>
-      </div>
+      <ng-container *ngFor="let course of courses">
+        <div class="course-item">
+          <div class="course-icon" [ngStyle]="{'background-color': course.color}">
+            {{ course.courseName.charAt(0) }}
+          </div>
+          <a mat-list-item [routerLink]="['/home/cursos/detalles', course.courseName]" routerLinkActive="active">
+            <div class="course-details">
+              <span class="course-name">{{ course.courseName }}</span>
+              <span class="horario">{{ course.horario }}</span>
+            </div>
+          </a>
+        </div>
+      </ng-container>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
