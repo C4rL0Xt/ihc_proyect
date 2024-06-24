@@ -55,4 +55,11 @@
     grid-template-columns: 1fr;
     grid-template-rows: auto;
   }
+  
+  .bienvenido,
+  .tarea-pendiente,
+  .cursos-actuales,
+  .proximos-eventos {
+    width: 100%;
+  }
 }
