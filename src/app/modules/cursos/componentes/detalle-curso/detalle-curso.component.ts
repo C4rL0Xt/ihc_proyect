@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CursosPageComponent } from '../../page/cursos-page/cursos-page.component';
+import { CoursesServiceService,Course } from '../../servicios/courses-service.service';
 
 @Component({
   selector: 'app-detalle-curso',
@@ -9,14 +9,28 @@ import { CursosPageComponent } from '../../page/cursos-page/cursos-page.componen
 })
 export class DetalleCursoComponent implements OnInit {
 
+  course: Course | undefined;
+
+  panelOpenState = false;
   nombreCurso: string | null = '';
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private coursesService: CoursesServiceService) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
-      this.nombreCurso = params.get('nombreCurso');
-    })
+      const nombreCurso = params.get('nombreCurso');
+      if (nombreCurso) {
+        this.course = this.coursesService.getCourseByName(nombreCurso);
+      } else {
+        console.error('No course name in URL');
+      }
+    });
   }
+
+  
+
+
+
+
 
 }

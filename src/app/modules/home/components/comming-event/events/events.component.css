@@ -122,3 +122,23 @@
   font-size: 0.875rem;
   color: #666;
 }
+
+/* Media Queries */
+@media (max-width: 480px) {
+  .timeline-container {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .timeline-content {
+    width: 100%;
+  }
+
+  .timeline-event:nth-child(odd) .timeline-content {
+    left: 0;
+  }
+
+  .timeline-event:nth-child(even) .timeline-content {
+    left: 0;
+  }
+}

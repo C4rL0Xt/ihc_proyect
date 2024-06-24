@@ -1,9 +1,13 @@
 .layout {
   display: grid;
-  grid:
-    "bienvenido bienvenido bienvenido" 150px "tarea-pendiente cursos-actuales proximos-eventos" auto / 480px 480px 480px;
+  grid-template-areas:
+    "bienvenido bienvenido bienvenido"
+    "tarea-pendiente cursos-actuales proximos-eventos";
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 12px 30px;
   margin: 30px;
+  width: calc(100% - 60px); /* Adjust to account for margin */
+  box-sizing: border-box;
 }
 
 .bienvenido {
@@ -24,15 +28,11 @@
 
 @media (min-width: 1200px) {
   .layout {
-    grid-template-areas:
-      "bienvenido bienvenido bienvenido"
-      "tarea-pendiente cursos-actuales proximos-eventos";
-    grid-template-columns: 580px 580px 580px;
-    grid-template-rows: 150px auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
   }
 }
 
-/* Tablet layout */
 @media (min-width: 768px) and (max-width: 1199px) {
   .layout {
     grid-template-areas:
@@ -44,7 +44,6 @@
   }
 }
 
-/* Mobile layout */
 @media (max-width: 767px) {
   .layout {
     grid-template-areas:
@@ -54,5 +53,20 @@
       "proximos-eventos";
     grid-template-columns: 1fr;
     grid-template-rows: auto;
+  }
+
+  .bienvenido,
+  .tarea-pendiente,
+  .cursos-actuales,
+  .proximos-eventos {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .proximos-eventos {
+    grid-area: unset;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    text-align: center;
   }
 }

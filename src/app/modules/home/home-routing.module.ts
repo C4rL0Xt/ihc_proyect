@@ -5,6 +5,7 @@ import { DashboardPageComponent } from '../dashboard/pages/dashboard-page/dashbo
 import { CursosPageComponent } from '../cursos/page/cursos-page/cursos-page.component';
 import { InicioPageComponent } from './pages/inicio-page/inicio-page/inicio-page.component';
 import { MainPageComponent } from '../cursos/page/main-page/main-page.component';
+import {ChatPageComponent} from '../chat/pages/chat-page/chat-page.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,9 @@ const routes: Routes = [
     path: 'cursos',
     component: MainPageComponent,
     loadChildren: () => import('../cursos/cursos.module').then(m => m.CursosModule)
+  },{
+    path: 'chat',
+    component: ChatPageComponent,
   }, {
     path: 'hi',
     component: InicioPageComponent

@@ -1,5 +1,23 @@
 import { Injectable } from '@angular/core';
 
+export interface Task {
+  title: string;
+  description: string;
+  dueDate: string;
+}
+
+export interface Material {
+  title: string;
+  description: string;
+  url: string;
+}
+
+export interface Week {
+  weekNumber: number;
+  tasks: Task[];
+  materials: Material[];
+}
+
 export interface Course {
   courseName: string;
   teacherName: string;
@@ -8,13 +26,14 @@ export interface Course {
   horario: string;
   cycle: string;
   color: string;
+  weeks: Week[]; // Nueva propiedad para las semanas
 }
 
 @Injectable({
   providedIn: 'root'
 })
 export class CoursesServiceService {
-  
+
   randomColors: string[] = [];
   private courses: Course[] = [
     {
@@ -24,7 +43,39 @@ export class CoursesServiceService {
       credits: 30,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo1',
-      color: ''
+      color: '',
+      weeks: [
+        {
+          weekNumber: 1,
+          tasks: [
+            { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
+            { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
+          ],
+          materials: [
+            { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
+            { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
+          ]
+        }, {
+          weekNumber: 2,
+          tasks: [
+            { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
+            { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
+          ],
+          materials: [
+            { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
+            { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
+          ]
+        }, {
+          weekNumber: 3,
+          tasks: [
+            { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
+            { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
+          ],
+          materials: [
+            { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
+            { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
+          ]
+        }]
     },
     {
       courseName: 'Desarrollo de Sistemas Web',
@@ -33,7 +84,19 @@ export class CoursesServiceService {
       credits: 3,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo1',
-      color: ''
+      color: '',
+      weeks: [
+        {
+          weekNumber: 1,
+          tasks: [
+            { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
+            { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
+          ],
+          materials: [
+            { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
+            { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
+          ]
+        }]
     },
     {
       courseName: 'Base de datos',
@@ -42,7 +105,19 @@ export class CoursesServiceService {
       credits: 4,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo1',
-      color: ''
+      color: '',
+      weeks: [
+        {
+          weekNumber: 1,
+          tasks: [
+            { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
+            { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
+          ],
+          materials: [
+            { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
+            { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
+          ]
+        }]
     },
     {
       courseName: 'Curso de ciclo 1',
@@ -51,7 +126,19 @@ export class CoursesServiceService {
       credits: 4,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo1',
-      color: ''
+      color: '',
+      weeks: [
+        {
+          weekNumber: 1,
+          tasks: [
+            { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
+            { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
+          ],
+          materials: [
+            { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
+            { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
+          ]
+        }]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -60,7 +147,19 @@ export class CoursesServiceService {
       credits: 4,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo2',
-      color: ''
+      color: '',
+      weeks: [
+        {
+          weekNumber: 1,
+          tasks: [
+            { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
+            { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
+          ],
+          materials: [
+            { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
+            { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
+          ]
+        }]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -69,7 +168,19 @@ export class CoursesServiceService {
       credits: 4,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo2',
-      color: ''
+      color: '',
+      weeks: [
+        {
+          weekNumber: 1,
+          tasks: [
+            { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
+            { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
+          ],
+          materials: [
+            { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
+            { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
+          ]
+        }]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -78,7 +189,19 @@ export class CoursesServiceService {
       credits: 4,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo2',
-      color: ''
+      color: '',
+      weeks: [
+        {
+          weekNumber: 1,
+          tasks: [
+            { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
+            { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
+          ],
+          materials: [
+            { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
+            { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
+          ]
+        }]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -87,7 +210,19 @@ export class CoursesServiceService {
       credits: 4,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo2',
-      color: ''
+      color: '',
+      weeks: [
+        {
+          weekNumber: 1,
+          tasks: [
+            { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
+            { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
+          ],
+          materials: [
+            { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
+            { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
+          ]
+        }]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -96,7 +231,19 @@ export class CoursesServiceService {
       credits: 4,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo2',
-      color: ''
+      color: '',
+      weeks: [
+        {
+          weekNumber: 1,
+          tasks: [
+            { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
+            { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
+          ],
+          materials: [
+            { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
+            { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
+          ]
+        }]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -105,7 +252,19 @@ export class CoursesServiceService {
       credits: 4,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo2',
-      color: ''
+      color: '',
+      weeks: [
+        {
+          weekNumber: 1,
+          tasks: [
+            { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
+            { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
+          ],
+          materials: [
+            { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
+            { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
+          ]
+        }]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -114,7 +273,19 @@ export class CoursesServiceService {
       credits: 4,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo2',
-      color: ''
+      color: '',
+      weeks: [
+        {
+          weekNumber: 1,
+          tasks: [
+            { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
+            { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
+          ],
+          materials: [
+            { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
+            { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
+          ]
+        }]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -123,7 +294,19 @@ export class CoursesServiceService {
       credits: 4,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo2',
-      color: ''
+      color: '',
+      weeks: [
+        {
+          weekNumber: 1,
+          tasks: [
+            { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
+            { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
+          ],
+          materials: [
+            { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
+            { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
+          ]
+        }]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -132,7 +315,19 @@ export class CoursesServiceService {
       credits: 4,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo2',
-      color: ''
+      color: '',
+      weeks: [
+        {
+          weekNumber: 1,
+          tasks: [
+            { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
+            { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
+          ],
+          materials: [
+            { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
+            { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
+          ]
+        }]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -141,7 +336,19 @@ export class CoursesServiceService {
       credits: 4,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo2',
-      color: ''
+      color: '',
+      weeks: [
+        {
+          weekNumber: 1,
+          tasks: [
+            { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
+            { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
+          ],
+          materials: [
+            { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
+            { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
+          ]
+        }]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -150,7 +357,19 @@ export class CoursesServiceService {
       credits: 4,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo2',
-      color: ''
+      color: '',
+      weeks: [
+        {
+          weekNumber: 1,
+          tasks: [
+            { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
+            { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
+          ],
+          materials: [
+            { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
+            { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
+          ]
+        }]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -159,7 +378,19 @@ export class CoursesServiceService {
       credits: 4,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo2',
-      color: ''
+      color: '',
+      weeks: [
+        {
+          weekNumber: 1,
+          tasks: [
+            { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
+            { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
+          ],
+          materials: [
+            { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
+            { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
+          ]
+        }]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -168,7 +399,19 @@ export class CoursesServiceService {
       credits: 4,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo2',
-      color: ''
+      color: '',
+      weeks: [
+        {
+          weekNumber: 1,
+          tasks: [
+            { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
+            { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
+          ],
+          materials: [
+            { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
+            { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
+          ]
+        }]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -177,7 +420,19 @@ export class CoursesServiceService {
       credits: 4,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo2',
-      color: ''
+      color: '',
+      weeks: [
+        {
+          weekNumber: 1,
+          tasks: [
+            { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
+            { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
+          ],
+          materials: [
+            { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
+            { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
+          ]
+        }]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -186,11 +441,34 @@ export class CoursesServiceService {
       credits: 4,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo2',
-      color: ''
+      color: '',
+      weeks: [
+        {
+          weekNumber: 1,
+          tasks: [
+            { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
+            { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
+          ],
+          materials: [
+            { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
+            { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
+          ]
+        },
+        {
+          weekNumber: 2,
+          tasks: [
+            { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
+            { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
+          ],
+          materials: [
+            { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
+            { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
+          ]
+        }]
     }
   ];
 
-  constructor() { 
+  constructor() {
     this.assignRandomColors();
   }
 
@@ -204,7 +482,7 @@ export class CoursesServiceService {
   assignRandomColors(): void {
     this.courses.forEach(course => {
       const color = this.randomColor();
-      course.color = color; 
+      course.color = color;
       this.randomColors.push(color);
     });
   }
@@ -213,9 +491,8 @@ export class CoursesServiceService {
     return this.courses;
   }
 
-  getColorAleatorio(): string[]{
-    return this.randomColors;
+  getCourseByName(courseName: string): Course | undefined {
+    return this.courses.find(course => course.courseName === courseName);
   }
-  
-  
+
 }

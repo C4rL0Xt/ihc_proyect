@@ -5,7 +5,7 @@
       <a mat-list-item routerLink="/home/cursos/detalles" routerLinkActive="active">Detalles</a>
       <ng-container *ngFor="let course of courses">
         <div class="course-item">
-          <div class="course-icon" [ngStyle]="{'background-color': randomColor()}">
+          <div class="course-icon" [ngStyle]="{'background-color': course.color}">
             {{ course.courseName.charAt(0) }}
           </div>
           <a mat-list-item [routerLink]="['/home/cursos/detalles', course.courseName]" routerLinkActive="active">

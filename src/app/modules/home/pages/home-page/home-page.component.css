@@ -8,11 +8,13 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+  flex-wrap: wrap; /* Allow wrapping */
 }
 
 .top-section > * {
   flex: 1;
   margin-right: 10px;
+  min-width: calc(50% - 10px); /* Minimum width for smaller screens */
 }
 
 .top-section > *:last-child {
@@ -26,4 +28,20 @@
 
 .bottom-section > * {
   width: 100%;
+}
+
+@media (max-width: 768px) {
+  .top-section {
+    flex-direction: column;
+  }
+
+  .top-section > * {
+    margin-right: 0;
+    margin-bottom: 10px;
+    min-width: 100%; /* Full width for smaller screens */
+  }
+
+  .top-section > *:last-child {
+    margin-bottom: 0;
+  }
 }
