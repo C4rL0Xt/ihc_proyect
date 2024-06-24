@@ -25,17 +25,22 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
 import { ProfileComponent } from './components/profile-c/profile/profile.component';
-
+import { GraficaComponent } from './components/grafica/grafica.component';
+import { MatTableModule } from '@angular/material/table';
+import { ProgressTrackerComponent } from './components/progress-tracker/progress-tracker.component';
 
 
 @NgModule({
   declarations: [
     DashboardPageComponent,
-    ProfileComponent
+    ProfileComponent,
+    GraficaComponent,
+    ProgressTrackerComponent
   ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
+    MatTableModule,
     MatToolbar,
     MatToolbarModule,
     MatButtonModule,
@@ -57,7 +62,6 @@ import { ProfileComponent } from './components/profile-c/profile/profile.compone
     MatSnackBarModule,
     MatDatepickerModule,
     MatNativeDateModule
-
   ]
 })
 export class DashboardModule { }

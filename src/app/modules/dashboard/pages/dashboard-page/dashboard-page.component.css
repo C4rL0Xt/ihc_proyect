@@ -1,35 +1,41 @@
 .container {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 7px 7px;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 8px;
   grid-auto-flow: row dense;
   grid-template-areas:
-    "Profile Grafica"
-    "Profile Acceso-Rapido";
+    "Profile"
+    "Grafica";
   margin: 20px;
-  /* Add margin to the container */
+  margin-bottom: 0;
+  height: 100vh;
+  /* Ensure the container takes the full viewport height */
+  box-sizing: border-box;
+  /* Include padding and border in the element's total width and height */
+}
+
+@media (min-width: 768px) {
+
+  /* For tablets and larger screens */
+  .container {
+    grid-template-columns: 0.8fr 1.2fr;
+    grid-template-rows: 1fr;
+    /* Make rows flexible to fill the height */
+    grid-template-areas: "Profile Grafica";
+  }
 }
 
 .Grafica,
-.Acceso-Rapido,
 .Profile {
   padding: 20px;
-  /* Add padding to each grid area */
   background-color: #f8f8f8;
-  /* Optional: Add a background color for better visibility */
   border-radius: 8px;
-  /* Optional: Add rounded corners */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  /* Optional: Add a subtle shadow */
 }
 
 .Grafica {
   grid-area: Grafica;
-}
-
-.Acceso-Rapido {
-  grid-area: Acceso-Rapido;
 }
 
 .Profile {

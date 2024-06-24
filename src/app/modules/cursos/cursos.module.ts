@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import { CursosRoutingModule } from './cursos-routing.module';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -24,13 +25,19 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { CursosPageComponent } from './page/cursos-page/cursos-page.component';
 import { FormsModule } from '@angular/forms';
-
+import { DetalleCursoComponent } from './componentes/detalle-curso/detalle-curso.component';
+import { MainPageComponent } from './page/main-page/main-page.component';
+import { CoursesServiceService } from './servicios/courses-service.service';
 @NgModule({
   declarations: [
-    CursosPageComponent
+    CursosPageComponent,
+    DetalleCursoComponent,
+    MainPageComponent,
+
   ],
   imports: [
     CommonModule,
+    RouterModule,
     FormsModule,
     CursosRoutingModule,
     MatToolbarModule,
@@ -53,6 +60,7 @@ import { FormsModule } from '@angular/forms';
     MatSnackBarModule,
     MatDatepickerModule,
     MatNativeDateModule
-  ]
+  ],
+  providers: [CoursesServiceService]
 })
 export class CursosModule { }

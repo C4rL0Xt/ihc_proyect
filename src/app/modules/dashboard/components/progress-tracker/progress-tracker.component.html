@@ -1,0 +1,37 @@
+<div class="learning-analytics-dashboard-container">
+  <h2>Gráfico de promedio ponderado por periodo académico</h2>
+
+  <!-- Grade Trends Chart -->
+  <div class="chart-section">
+    <h3>Grade Trends Over Time</h3>
+    <canvas id="gradeTrendsChart"></canvas>
+  </div>
+
+  <!-- Course Performance Analysis -->
+  <div class="course-performance-section">
+    <h3>Cursos con mayor nota</h3>
+    <ul>
+      <li *ngFor="let course of courses">
+        <span class="course-name">{{ course.name }}</span>
+        <span class="course-grade">{{ course.grade }}</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Study Habits Insights
+  <div class="study-habits-section">
+    <h3>Study Habits Insights</h3>
+    <p><i class="fas fa-clock"></i> Most productive study time: <strong>{{ studyHabits.mostProductiveTime }}</strong>
+    </p>
+    <p><i class="fas fa-calendar-alt"></i> Most productive study day: <strong>{{ studyHabits.mostProductiveDay
+        }}</strong></p>
+  </div>
+-->
+  <!-- Time Spent on Learning Activities
+  <div class="time-spent-section">
+    <h3>Time Spent on Learning Activities</h3>
+    <p><i class="fas fa-book-reader"></i> Lectures: <strong>{{ timeSpent.lectures }}</strong> hours</p>
+    <p><i class="fas fa-pencil-alt"></i> Assignments: <strong>{{ timeSpent.assignments }}</strong> hours</p>
+    <p><i class="fas fa-file-alt"></i> Exams: <strong>{{ timeSpent.exams }}</strong> hours</p>
+  </div>-->
+</div>

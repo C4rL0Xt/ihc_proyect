@@ -13,6 +13,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSelectModule } from '@angular/material/select';
@@ -49,6 +50,7 @@ import { CalendarModule, DateAdapter } from 'angular-calendar';
   imports: [
     CommonModule,
     HomeRoutingModule,
+    MatTableModule,
     SharedModule,
     MatToolbarModule,
     MatButtonModule,
