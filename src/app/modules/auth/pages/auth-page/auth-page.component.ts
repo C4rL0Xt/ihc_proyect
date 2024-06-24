@@ -16,19 +16,9 @@ import { trigger, style, transition, animate } from '@angular/animations';
   ]
 })
 export class AuthPageComponent {
-  loginForm: FormGroup;
+  passwordFieldType: string = 'password';
 
-  constructor(private fb: FormBuilder) {
-    this.loginForm = this.fb.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required]
-    });
-  }
-
-  onSubmit() {
-    if (this.loginForm.valid) {
-      console.log('Form Submitted!', this.loginForm.value);
-      // Here you can implement login logic
-    }
+  togglePasswordVisibility() {
+    this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password';
   }
 }

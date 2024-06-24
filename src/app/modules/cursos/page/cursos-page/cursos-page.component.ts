@@ -17,20 +17,7 @@ export class CursosPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.courses = this.courseService.getCourses();
-    this.generateRandomColors();
-  }
-
-  generateRandomColors() {
-    for (let i = 0; i < this.courses.length; i++) {
-      this.randomColors.push(this.getRandomColor());
-    }
-  }
-
-  getRandomColor(): string {
-    const hue = Math.floor(Math.random() * 360);
-    const saturation = Math.floor(Math.random() * 31) + 60;
-    const lightness = Math.floor(Math.random() * 21) + 70;
-    return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+    this.randomColors = this.courseService.getColorAleatorio();
   }
 
   filteredCourses(): Course[] {
