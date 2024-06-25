@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DetalleCursoComponent } from './componentes/detalle-curso/detalle-curso.component';
 import { CursosPageComponent } from './page/cursos-page/cursos-page.component';
+import { BibliotecaComponent } from './componentes/biblioteca/biblioteca.component';
 
 const routes: Routes = [
   {
@@ -16,7 +17,11 @@ const routes: Routes = [
     path: '',
     redirectTo: 'all',
     pathMatch: 'full'
+  },{
+    path: 'biblioteca',
+    component: BibliotecaComponent
   }
+
 ];
 
 @NgModule({

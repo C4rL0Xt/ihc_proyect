@@ -1,216 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Playwrite+AU+VIC:wght@100..400&display=swap');
-/* login.component.css */
+
 
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Playwrite+AU+VIC:wght@100..400&display=swap');
 
-/* 
-.login-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f0f0f0;
-  overflow: hidden;
-  position: relative;
-}
 
-
-
-.background-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-
-.background-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
-}
-
-.company-title {
-  font-family: "Playwrite AU VIC", cursive;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 40px;
-}
-
-.background-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.facebook.com%2FEgresadosFISI.UNMSM%2F&psig=AOvVaw2jpqNZaHVWO6RauMtWbT0Q&ust=1719271732901000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCNDPy77w8oYDFQAAAAAdAAAAABAI');
-  background-size: cover;
-  background-position: center;
-  filter: blur(5px);
-  z-index: -1;
-}
-
-.enter-data {
-  font-size: 18px;
-  color: darkgray;
-  font-family: "Comfortaa", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
- */
-/*
-
-.login-form-container {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  max-width: 500px;
-  max-height: 500px;
-
-  text-align: center;
-}
-
-.login-form {
- background-color: rgba(255, 255, 255, 0.9);
-
-  padding: 40px;
-  width: 100%;
-  height: 100%;
-  max-width: 400px;
-  max-height: 400px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
-
-
-.email-part {
-  display: flex;
-  background-color: red;
-  border-style: ridge;
-  width: 100%;
-  height: 100%;
-  max-width: 400px;
-  max-height: 40px;
-}
-
-.icon-email{
-  padding-right: 10px;
-}
-
-
-.input-email {
-  width: 100%;
-  max-width: 300px;
-  border: none;
-}
-
-.pass-part {
-  display: flex;
-
-}
-
-.input-pass {
-  width: 100%;
-  max-width: 400px;
-}
-
-.icon-pass{
-  padding-right: 10px;
-}
-  */
-/* .login-form-container {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 10px;
-    text-align: center;
-    
-}
-  
-.login-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 40px;
-  width: 100%;
-  height: 100%;
-  max-width: 400px;
-  max-height: 400px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
-
-mat-form-field {
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-.email-part,
-.pass-part {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 50px;
-  border: 1px solid #ccc;
-  border-radius: 25px;
-  padding: 0 15px;
-  background-color: white;
-}
-
-.icon-email,
-.icon-pass {
-  margin-right: 10px;
-  color: #757575;
-}
-
-.input-email,
-.input-pass {
-  width: 100%;
-  border: none;
-  outline: none;
-  background: transparent;
-}
-
-.submit-button {
-  width: 100%;
-  height: 50px;
-  border-radius: 25px;
-  margin-top: 20px;
-}
-
-
-::ng-deep .mat-form-field-underline {
-  display: none;
-}
-
-
-::ng-deep .mat-form-field-wrapper {
-  padding-bottom: 0;
-}
-
-
-::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
-  padding: 0 !important;
-  background-color: transparent;
-}
-
-
-mat-form-field,
-.submit-button {
-  width: 100%;
-  max-width: 350px; 
-} */
 
 @keyframes gradientBackground {
   0% {
@@ -266,7 +59,7 @@ mat-form-field,
 
 .input-container {
   position: relative;
-  margin-bottom: 1.5rem;  /* Increased space between inputs */
+  margin-bottom: 1.5rem;  
   display: flex;
   align-items: center;
 }
@@ -279,10 +72,10 @@ mat-form-field,
 
 .input-container input {
   width: 100%;
-  padding: 0.75rem 0.75rem 0.75rem 2.5rem;  /* Increased padding for larger input fields */
-  font-size: 1.1rem;  /* Larger font size */
-  border: 1px ridge #9836e7;  /* More pronounced edges */
-  border-radius: 8px;  /* More rounded corners */
+  padding: 0.75rem 0.75rem 0.75rem 2.5rem;  
+  font-size: 1.1rem; 
+  border: 1px ridge #9836e7;  
+  border-radius: 8px;  
 }
 
 .input-container input:focus {
@@ -298,7 +91,7 @@ mat-form-field,
 button {
   width: 100%;
   padding: 0.75rem;
-  margin-top: 1.5rem;  /* Increased space above the button */
+  margin-top: 1.5rem;  
   background-color: #3e0863;
   border: none;
   border-radius: 20px;

@@ -14,9 +14,26 @@ export interface Material {
 
 export interface Week {
   weekNumber: number;
+  weekTema: string;
   tasks: Task[];
   materials: Material[];
 }
+
+export interface Alumn{
+  nombreAlumno: string;
+  correo: string;
+}
+
+export interface Libro{
+  nombreLibro: string;
+  ruta: string;
+}
+
+export interface Articulo{
+  nombreArticulo: string;
+  ruta: string;
+}
+
 
 export interface Course {
   courseName: string;
@@ -27,6 +44,10 @@ export interface Course {
   cycle: string;
   color: string;
   weeks: Week[]; // Nueva propiedad para las semanas
+  alumnos: Alumn[];
+  rutaSilabo: string;
+  rutasLibros: Libro[];
+  rutasArticulos: Articulo[];
 }
 
 @Injectable({
@@ -47,6 +68,7 @@ export class CoursesServiceService {
       weeks: [
         {
           weekNumber: 1,
+          weekTema: 'Tema de la semana',
           tasks: [
             { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
             { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
@@ -57,6 +79,7 @@ export class CoursesServiceService {
           ]
         }, {
           weekNumber: 2,
+          weekTema: 'Tema de la semana',
           tasks: [
             { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
             { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
@@ -67,6 +90,7 @@ export class CoursesServiceService {
           ]
         }, {
           weekNumber: 3,
+          weekTema: 'Tema de la semana',
           tasks: [
             { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
             { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
@@ -75,7 +99,100 @@ export class CoursesServiceService {
             { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
             { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
           ]
-        }]
+        }, {
+          weekNumber: 4,
+          weekTema: 'Tema de la semana',
+          tasks: [
+            { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
+            { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
+          ],
+          materials: [
+            { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
+            { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
+          ]
+        }, {
+          weekNumber: 5,
+          weekTema: 'Tema de la semana',
+          tasks: [
+            { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
+            { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
+          ],
+          materials: [
+            { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
+            { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
+          ]
+        }, {
+          weekNumber: 6,
+          weekTema: 'Tema de la semana',
+          tasks: [
+            { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
+            { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
+          ],
+          materials: [
+            { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
+            { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
+          ]
+        }, {
+          weekNumber: 7,
+          weekTema: 'Tema de la semana',
+          tasks: [
+            { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
+            { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
+          ],
+          materials: [
+            { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
+            { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
+          ]
+        }, {
+          weekNumber: 8,
+          weekTema: 'Tema de la semana',
+          tasks: [
+            { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
+            { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
+          ],
+          materials: [
+            { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
+            { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
+          ]
+        }, {
+          weekNumber: 9,
+          weekTema: 'Tema de la semana',
+          tasks: [
+            { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
+            { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
+          ],
+          materials: [
+            { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
+            { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
+          ]
+        }],
+      alumnos:[
+        {
+          nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+          correo: 'carlos.espinoza23@unmsm.edu.pe'
+        },{
+          nombreAlumno: 'Melani Laveriano Porroa',
+          correo: 'melani.laveriano@unmsm.edu.pe'
+        }
+      ],
+      rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
+      rutasLibros: [
+        {nombreLibro: 'Libro1',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        },
+        {nombreLibro: 'Libro2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        }
+      ],
+      rutasArticulos: [
+        {nombreArticulo: 'Articulo1',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        },
+        {nombreArticulo: 'Articulo2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        }
+
+      ]
     },
     {
       courseName: 'Desarrollo de Sistemas Web',
@@ -88,6 +205,7 @@ export class CoursesServiceService {
       weeks: [
         {
           weekNumber: 1,
+          weekTema: 'Tema de la semana',
           tasks: [
             { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
             { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
@@ -96,7 +214,34 @@ export class CoursesServiceService {
             { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
             { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
           ]
-        }]
+        }],
+        alumnos:[
+          {
+            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+            correo: 'carlos.espinoza23@unmsm.edu.pe'
+          },{
+            nombreAlumno: 'Melani Laveriano Porroa',
+            correo: 'melani.laveriano@unmsm.edu.pe'
+          }
+        ],
+      rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
+      rutasLibros: [
+        {nombreLibro: 'Libro2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        },
+        {nombreLibro: 'Libro2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        }
+      ],
+      rutasArticulos: [
+        {nombreArticulo: 'Articulo1',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        },
+        {nombreArticulo: 'Articulo2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        }
+
+      ]
     },
     {
       courseName: 'Base de datos',
@@ -109,6 +254,7 @@ export class CoursesServiceService {
       weeks: [
         {
           weekNumber: 1,
+          weekTema: 'Tema de la semana',
           tasks: [
             { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
             { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
@@ -117,7 +263,70 @@ export class CoursesServiceService {
             { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
             { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
           ]
-        }]
+        }],
+        alumnos:[
+          {
+            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+            correo: 'carlos.espinoza23@unmsm.edu.pe'
+          },{
+            nombreAlumno: 'Melani Laveriano Porroa',
+            correo: 'melani.laveriano@unmsm.edu.pe'
+          },{
+            nombreAlumno: 'Melani Laveriano Porroa',
+            correo: 'melani.laveriano@unmsm.edu.pe'
+          },{
+            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+            correo: 'carlos.espinoza23@unmsm.edu.pe'
+          },{
+            nombreAlumno: 'Melani Laveriano Porroa',
+            correo: 'melani.laveriano@unmsm.edu.pe'
+          },{
+            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+            correo: 'carlos.espinoza23@unmsm.edu.pe'
+          },{
+            nombreAlumno: 'Melani Laveriano Porroa',
+            correo: 'melani.laveriano@unmsm.edu.pe'
+          },{
+            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+            correo: 'carlos.espinoza23@unmsm.edu.pe'
+          },{
+            nombreAlumno: 'Melani Laveriano Porroa',
+            correo: 'melani.laveriano@unmsm.edu.pe'
+          },{
+            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+            correo: 'carlos.espinoza23@unmsm.edu.pe'
+          },{
+            nombreAlumno: 'Melani Laveriano Porroa',
+            correo: 'melani.laveriano@unmsm.edu.pe'
+          },{
+            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+            correo: 'carlos.espinoza23@unmsm.edu.pe'
+          },{
+            nombreAlumno: 'Melani Laveriano Porroa',
+            correo: 'melani.laveriano@unmsm.edu.pe'
+          },{
+            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+            correo: 'carlos.espinoza23@unmsm.edu.pe'
+          }
+        ],
+        rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
+        rutasLibros: [
+          {nombreLibro: 'Libro2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          },
+          {nombreLibro: 'Libro2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          }
+        ],
+        rutasArticulos: [
+          {nombreArticulo: 'Articulo1',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          },
+          {nombreArticulo: 'Articulo2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          }
+  
+        ]
     },
     {
       courseName: 'Curso de ciclo 1',
@@ -130,6 +339,7 @@ export class CoursesServiceService {
       weeks: [
         {
           weekNumber: 1,
+          weekTema: 'Tema de la semana',
           tasks: [
             { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
             { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
@@ -138,7 +348,34 @@ export class CoursesServiceService {
             { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
             { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
           ]
-        }]
+        }],
+        alumnos:[
+          {
+            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+            correo: 'carlos.espinoza23@unmsm.edu.pe'
+          },{
+            nombreAlumno: 'Melani Laveriano Porroa',
+            correo: 'melani.laveriano@unmsm.edu.pe'
+          }
+        ],
+        rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
+        rutasLibros: [
+          {nombreLibro: 'Libro2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          },
+          {nombreLibro: 'Libro2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          }
+        ],
+        rutasArticulos: [
+          {nombreArticulo: 'Articulo1',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          },
+          {nombreArticulo: 'Articulo2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          }
+  
+        ]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -151,6 +388,7 @@ export class CoursesServiceService {
       weeks: [
         {
           weekNumber: 1,
+          weekTema: 'Tema de la semana',
           tasks: [
             { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
             { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
@@ -159,7 +397,34 @@ export class CoursesServiceService {
             { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
             { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
           ]
-        }]
+        }],
+        alumnos:[
+          {
+            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+            correo: 'carlos.espinoza23@unmsm.edu.pe'
+          },{
+            nombreAlumno: 'Melani Laveriano Porroa',
+            correo: 'melani.laveriano@unmsm.edu.pe'
+          }
+        ],
+        rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
+        rutasLibros: [
+          {nombreLibro: 'Libro2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          },
+          {nombreLibro: 'Libro2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          }
+        ],
+        rutasArticulos: [
+          {nombreArticulo: 'Articulo1',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          },
+          {nombreArticulo: 'Articulo2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          }
+  
+        ]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -172,6 +437,7 @@ export class CoursesServiceService {
       weeks: [
         {
           weekNumber: 1,
+          weekTema: 'Tema de la semana',
           tasks: [
             { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
             { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
@@ -180,7 +446,34 @@ export class CoursesServiceService {
             { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
             { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
           ]
-        }]
+        }],
+        alumnos:[
+          {
+            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+            correo: 'carlos.espinoza23@unmsm.edu.pe'
+          },{
+            nombreAlumno: 'Melani Laveriano Porroa',
+            correo: 'melani.laveriano@unmsm.edu.pe'
+          }
+        ],
+        rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
+        rutasLibros: [
+          {nombreLibro: 'Libro2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          },
+          {nombreLibro: 'Libro2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          }
+        ],
+        rutasArticulos: [
+          {nombreArticulo: 'Articulo1',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          },
+          {nombreArticulo: 'Articulo2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          }
+  
+        ]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -193,6 +486,7 @@ export class CoursesServiceService {
       weeks: [
         {
           weekNumber: 1,
+          weekTema: 'Tema de la semana',
           tasks: [
             { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
             { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
@@ -201,7 +495,34 @@ export class CoursesServiceService {
             { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
             { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
           ]
-        }]
+        }],
+        alumnos:[
+          {
+            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+            correo: 'carlos.espinoza23@unmsm.edu.pe'
+          },{
+            nombreAlumno: 'Melani Laveriano Porroa',
+            correo: 'melani.laveriano@unmsm.edu.pe'
+          }
+        ],
+        rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
+        rutasLibros: [
+          {nombreLibro: 'Libro2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          },
+          {nombreLibro: 'Libro2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          }
+        ],
+        rutasArticulos: [
+          {nombreArticulo: 'Articulo1',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          },
+          {nombreArticulo: 'Articulo2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          }
+  
+        ]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -214,6 +535,7 @@ export class CoursesServiceService {
       weeks: [
         {
           weekNumber: 1,
+          weekTema: 'Tema de la semana',
           tasks: [
             { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
             { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
@@ -222,7 +544,34 @@ export class CoursesServiceService {
             { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
             { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
           ]
-        }]
+        }],
+        alumnos:[
+          {
+            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+            correo: 'carlos.espinoza23@unmsm.edu.pe'
+          },{
+            nombreAlumno: 'Melani Laveriano Porroa',
+            correo: 'melani.laveriano@unmsm.edu.pe'
+          }
+        ],
+        rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
+        rutasLibros: [
+          {nombreLibro: 'Libro2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          },
+          {nombreLibro: 'Libro2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          }
+        ],
+        rutasArticulos: [
+          {nombreArticulo: 'Articulo1',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          },
+          {nombreArticulo: 'Articulo2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          }
+  
+        ]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -235,6 +584,7 @@ export class CoursesServiceService {
       weeks: [
         {
           weekNumber: 1,
+          weekTema: 'Tema de la semana',
           tasks: [
             { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
             { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
@@ -243,7 +593,34 @@ export class CoursesServiceService {
             { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
             { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
           ]
-        }]
+        }],
+        alumnos:[
+          {
+            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+            correo: 'carlos.espinoza23@unmsm.edu.pe'
+          },{
+            nombreAlumno: 'Melani Laveriano Porroa',
+            correo: 'melani.laveriano@unmsm.edu.pe'
+          }
+        ],
+        rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
+        rutasLibros: [
+          {nombreLibro: 'Libro2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          },
+          {nombreLibro: 'Libro2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          }
+        ],
+        rutasArticulos: [
+          {nombreArticulo: 'Articulo1',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          },
+          {nombreArticulo: 'Articulo2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          }
+  
+        ]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -256,6 +633,7 @@ export class CoursesServiceService {
       weeks: [
         {
           weekNumber: 1,
+          weekTema: 'Tema de la semana',
           tasks: [
             { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
             { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
@@ -264,7 +642,34 @@ export class CoursesServiceService {
             { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
             { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
           ]
-        }]
+        }],
+        alumnos:[
+          {
+            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+            correo: 'carlos.espinoza23@unmsm.edu.pe'
+          },{
+            nombreAlumno: 'Melani Laveriano Porroa',
+            correo: 'melani.laveriano@unmsm.edu.pe'
+          }
+        ],
+        rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
+        rutasLibros: [
+          {nombreLibro: 'Libro2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          },
+          {nombreLibro: 'Libro2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          }
+        ],
+        rutasArticulos: [
+          {nombreArticulo: 'Articulo1',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          },
+          {nombreArticulo: 'Articulo2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          }
+  
+        ]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -277,6 +682,7 @@ export class CoursesServiceService {
       weeks: [
         {
           weekNumber: 1,
+          weekTema: 'Tema de la semana',
           tasks: [
             { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
             { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
@@ -285,7 +691,34 @@ export class CoursesServiceService {
             { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
             { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
           ]
-        }]
+        }],
+        alumnos:[
+          {
+            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+            correo: 'carlos.espinoza23@unmsm.edu.pe'
+          },{
+            nombreAlumno: 'Melani Laveriano Porroa',
+            correo: 'melani.laveriano@unmsm.edu.pe'
+          }
+        ],
+        rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
+        rutasLibros: [
+          {nombreLibro: 'Libro2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          },
+          {nombreLibro: 'Libro2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          }
+        ],
+        rutasArticulos: [
+          {nombreArticulo: 'Articulo1',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          },
+          {nombreArticulo: 'Articulo2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          }
+  
+        ]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -298,6 +731,7 @@ export class CoursesServiceService {
       weeks: [
         {
           weekNumber: 1,
+          weekTema: 'Tema de la semana',
           tasks: [
             { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
             { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
@@ -306,7 +740,34 @@ export class CoursesServiceService {
             { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
             { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
           ]
-        }]
+        }],
+        alumnos:[
+          {
+            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+            correo: 'carlos.espinoza23@unmsm.edu.pe'
+          },{
+            nombreAlumno: 'Melani Laveriano Porroa',
+            correo: 'melani.laveriano@unmsm.edu.pe'
+          }
+        ],
+        rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
+        rutasLibros: [
+          {nombreLibro: 'Libro2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          },
+          {nombreLibro: 'Libro2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          }
+        ],
+        rutasArticulos: [
+          {nombreArticulo: 'Articulo1',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          },
+          {nombreArticulo: 'Articulo2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          }
+  
+        ]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -319,6 +780,7 @@ export class CoursesServiceService {
       weeks: [
         {
           weekNumber: 1,
+          weekTema: 'Tema de la semana',
           tasks: [
             { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
             { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
@@ -327,7 +789,34 @@ export class CoursesServiceService {
             { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
             { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
           ]
-        }]
+        }],
+        alumnos:[
+          {
+            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+            correo: 'carlos.espinoza23@unmsm.edu.pe'
+          },{
+            nombreAlumno: 'Melani Laveriano Porroa',
+            correo: 'melani.laveriano@unmsm.edu.pe'
+          }
+        ],
+        rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
+        rutasLibros: [
+          {nombreLibro: 'Libro2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          },
+          {nombreLibro: 'Libro2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          }
+        ],
+        rutasArticulos: [
+          {nombreArticulo: 'Articulo1',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          },
+          {nombreArticulo: 'Articulo2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          }
+  
+        ]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -340,6 +829,7 @@ export class CoursesServiceService {
       weeks: [
         {
           weekNumber: 1,
+          weekTema: 'Tema de la semana',
           tasks: [
             { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
             { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
@@ -348,7 +838,34 @@ export class CoursesServiceService {
             { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
             { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
           ]
-        }]
+        }],
+        alumnos:[
+          {
+            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+            correo: 'carlos.espinoza23@unmsm.edu.pe'
+          },{
+            nombreAlumno: 'Melani Laveriano Porroa',
+            correo: 'melani.laveriano@unmsm.edu.pe'
+          }
+        ],
+        rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
+        rutasLibros: [
+          {nombreLibro: 'Libro2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          },
+          {nombreLibro: 'Libro2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          }
+        ],
+        rutasArticulos: [
+          {nombreArticulo: 'Articulo1',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          },
+          {nombreArticulo: 'Articulo2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          }
+  
+        ]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -361,6 +878,7 @@ export class CoursesServiceService {
       weeks: [
         {
           weekNumber: 1,
+          weekTema: 'Tema de la semana',
           tasks: [
             { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
             { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
@@ -369,7 +887,34 @@ export class CoursesServiceService {
             { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
             { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
           ]
-        }]
+        }],
+        alumnos:[
+          {
+            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+            correo: 'carlos.espinoza23@unmsm.edu.pe'
+          },{
+            nombreAlumno: 'Melani Laveriano Porroa',
+            correo: 'melani.laveriano@unmsm.edu.pe'
+          }
+        ],
+        rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
+        rutasLibros: [
+          {nombreLibro: 'Libro2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          },
+          {nombreLibro: 'Libro2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          }
+        ],
+        rutasArticulos: [
+          {nombreArticulo: 'Articulo1',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          },
+          {nombreArticulo: 'Articulo2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          }
+  
+        ]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -382,6 +927,7 @@ export class CoursesServiceService {
       weeks: [
         {
           weekNumber: 1,
+          weekTema: 'Tema de la semana',
           tasks: [
             { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
             { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
@@ -390,7 +936,34 @@ export class CoursesServiceService {
             { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
             { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
           ]
-        }]
+        }],
+        alumnos:[
+          {
+            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+            correo: 'carlos.espinoza23@unmsm.edu.pe'
+          },{
+            nombreAlumno: 'Melani Laveriano Porroa',
+            correo: 'melani.laveriano@unmsm.edu.pe'
+          }
+        ],
+        rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
+        rutasLibros: [
+          {nombreLibro: 'Libro2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          },
+          {nombreLibro: 'Libro2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          }
+        ],
+        rutasArticulos: [
+          {nombreArticulo: 'Articulo1',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          },
+          {nombreArticulo: 'Articulo2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          }
+  
+        ]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -403,6 +976,7 @@ export class CoursesServiceService {
       weeks: [
         {
           weekNumber: 1,
+          weekTema: 'Tema de la semana',
           tasks: [
             { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
             { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
@@ -411,7 +985,34 @@ export class CoursesServiceService {
             { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
             { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
           ]
-        }]
+        }],
+        alumnos:[
+          {
+            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+            correo: 'carlos.espinoza23@unmsm.edu.pe'
+          },{
+            nombreAlumno: 'Melani Laveriano Porroa',
+            correo: 'melani.laveriano@unmsm.edu.pe'
+          }
+        ],
+        rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
+        rutasLibros: [
+          {nombreLibro: 'Libro2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          },
+          {nombreLibro: 'Libro2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          }
+        ],
+        rutasArticulos: [
+          {nombreArticulo: 'Articulo1',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          },
+          {nombreArticulo: 'Articulo2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          }
+  
+        ]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -424,6 +1025,7 @@ export class CoursesServiceService {
       weeks: [
         {
           weekNumber: 1,
+          weekTema: 'Tema de la semana',
           tasks: [
             { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
             { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
@@ -432,7 +1034,34 @@ export class CoursesServiceService {
             { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
             { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
           ]
-        }]
+        }],
+        alumnos:[
+          {
+            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+            correo: 'carlos.espinoza23@unmsm.edu.pe'
+          },{
+            nombreAlumno: 'Melani Laveriano Porroa',
+            correo: 'melani.laveriano@unmsm.edu.pe'
+          }
+        ],
+        rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
+        rutasLibros: [
+          {nombreLibro: 'Libro2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          },
+          {nombreLibro: 'Libro2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          }
+        ],
+        rutasArticulos: [
+          {nombreArticulo: 'Articulo1',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          },
+          {nombreArticulo: 'Articulo2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          }
+  
+        ]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -445,6 +1074,7 @@ export class CoursesServiceService {
       weeks: [
         {
           weekNumber: 1,
+          weekTema: 'Tema de la semana',
           tasks: [
             { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
             { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
@@ -456,6 +1086,7 @@ export class CoursesServiceService {
         },
         {
           weekNumber: 2,
+          weekTema: 'Tema de la semana',
           tasks: [
             { title: 'Task 1', description: 'Description 1', dueDate: '2024-07-01' },
             { title: 'Task 2', description: 'Description 2', dueDate: '2024-07-02' }
@@ -464,7 +1095,34 @@ export class CoursesServiceService {
             { title: 'Material 1', description: 'Description 1', url: 'http://example.com' },
             { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
           ]
-        }]
+        }],
+        alumnos:[
+          {
+            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+            correo: 'carlos.espinoza23@unmsm.edu.pe'
+          },{
+            nombreAlumno: 'Melani Laveriano Porroa',
+            correo: 'melani.laveriano@unmsm.edu.pe'
+          }
+        ],
+        rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
+        rutasLibros: [
+          {nombreLibro: 'Libro2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          },
+          {nombreLibro: 'Libro2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          }
+        ],
+        rutasArticulos: [
+          {nombreArticulo: 'Articulo1',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          },
+          {nombreArticulo: 'Articulo2',
+            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+          }
+  
+        ]
     }
   ];
 

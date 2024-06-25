@@ -5,7 +5,7 @@
     </div>
     <div class="header-opciones">
       <a routerLink="/home/hi" [ngClass]="{'active': selectedOption === 'home'}" (click)="selectOption('home')">Home</a>
-      <a href="#" [ngClass]="{'active': selectedOption === 'calendar'}" (click)="selectOption('calendar')">Calendar</a>
+      <a routerLink="/home/calendar" [ngClass]="{'active': selectedOption === 'calendar'}" (click)="selectOption('calendar')">Calendar</a>
       <a routerLink="/home/cursos" [ngClass]="{'active': selectedOption === 'cursos'}" (click)="selectOption('cursos')">Mis Cursos</a>
       <a routerLink="/home/chat" [ngClass]="{'active': selectedOption === 'chat'}" (click)="selectOption('chat')">Mi chat</a>
     </div>

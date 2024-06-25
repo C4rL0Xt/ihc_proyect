@@ -1,15 +1,198 @@
-.container {
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+.layout {
+  display: grid;
+  grid-template-areas:
+    "layout-header"
+    "layout-body";
+  grid-template-rows: calc(8% + 15px) auto;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(226, 162, 43, 0.3), rgba(237, 206, 92, 0.3));
-
-  /* Brown color with 50% opacity */
+  box-sizing: border-box;
   border-radius: 20px;
-  box-shadow: 10px 0 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 0 5px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(45deg, rgba(156, 182, 221, 0.5), rgba(185, 207, 232, 0.5), rgba(185, 207, 232, 0.5), rgba(156, 182, 221, 0.5));
 }
 
-.container-header {
-  border-radius: 15px 15px 0 0 !important;
-  border-bottom: 0 !important;
-  background-color: #f9f1cc;
+/*height: calc(100vh - 75px);*/
+
+.layout-header {
+  grid-area: layout-header;
+  padding: 10px;
+  box-sizing: border-box;
+
+  border-radius: 20px;
+  position: relative;
+}
+
+
+
+.input-search{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(100% - 50px);
+  height: calc(100% - 20px); /* Ajusta esto según el padding del input */
+  max-width: 450px;
+  max-height: 40px;
+  border-radius: 12px;
+  border: 0px;
+  transform: translate(-50%, -50%);
+  padding-left: 15px;
+  background-color: rgba(156, 182, 221, 0.5);
+  transition: width 0.4s ease-in-out;
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400px;
+  font-style: normal;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  right: 8%; /* Adjust this according to the maximum width of the input */
+  transform: translateY(-50%);
+  pointer-events: none; /* Allows clicking through the icon */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .input-search {
+    width: calc(100% - 30px);
+    max-width: 300px;
+  }
+
+  .icon {
+    right: calc(50% - 5px); /* Adjust this according to the maximum width of the input */
+  }
+}
+
+.separator{
+  width: 100%;
+  height: 1px;
+  background-color: rgba(156, 182, 221, 0.5);
+}
+
+.layout-body {
+  grid-area: layout-body;
+  box-sizing: border-box;
+}
+
+
+
+.list-container{
+  width: 100%;
+  height: 100%;
+  max-height: calc(100vh - 230px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.course-item {
+  height: 100px;
+  width: 100%;
+  padding-top: 5px;
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  transition: background-color 0.3s ease;
+} 
+
+.course-item:hover {
+  background-color: rgba(131, 157, 209 , 0.5);
+    cursor: pointer; /* Cambia el cursor a una mano para indicar que es clickeable */
+}
+
+.avatar {
+  font-size: 2.5rem; /* Tamaño más grande y responsivo */
+  width: 2.5rem; /* Asegura que el ancho sea igual a la altura */
+  height: 2.5rem; /* Asegura que la altura sea igual al ancho */
+  margin-right: 1rem;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0; /* Permite que el contenido se encoja si es necesario */
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.25rem;
+}
+
+.course-name {
+  font-size: 1.2rem; /* Tamaño más grande y responsivo */
+  font-weight: bold;
+  color: #000000;
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400px;
+  font-style: normal;
+}
+
+.date {
+  font-size: 0.9rem;
+  color: #888888;
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400px;
+  font-style: normal;
+}
+
+.last-message {
+  font-size: 1rem;
+  color: #777777;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400px;
+  font-style: normal;
+}
+
+
+
+
+
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .layout {
+    grid-template-rows: auto auto;
+    height: auto;
+  }
+
+  .layout-header, .layout-body {
+    padding: 5px;
+  }
+}
+
+@media (max-width: 600px) {
+  .avatar {
+    font-size: 2rem;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .course-name {
+    font-size: 1rem;
+  }
+
+  .date {
+    font-size: 0.8rem;
+  }
+
+  .last-message {
+    font-size: 0.9rem;
+  }
 }

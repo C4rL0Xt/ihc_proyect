@@ -5,12 +5,15 @@ import { DashboardPageComponent } from '../dashboard/pages/dashboard-page/dashbo
 import { InicioPageComponent } from './pages/inicio-page/inicio-page/inicio-page.component';
 import { MainPageComponent } from '../cursos/page/main-page/main-page.component';
 import { ChatPageComponent } from '../chat/pages/chat-page/chat-page.component';
-
+import { CalendarPageComponent } from '../calendar/page/calendar-page/calendar-page.component';
 const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardPageComponent,
     loadChildren: () => import('../dashboard/dashboard.module').then(m => m.DashboardModule)
+  },{
+    path: 'calendar',
+    component: CalendarPageComponent
   },
   {
     path: 'cursos',
@@ -23,6 +26,10 @@ const routes: Routes = [
   }, {
     path: 'hi',
     component: InicioPageComponent
+  },{
+    path:'',
+    redirectTo: '/hi',
+    pathMatch: 'full'
   }
 ];
 

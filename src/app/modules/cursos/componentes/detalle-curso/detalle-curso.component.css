@@ -1,14 +1,73 @@
-.selector-style{
+
+  .mat-expansion-panel-header::after {
+    content: '\25BC'; /* Unicode character for downward-pointing triangle */
+    color: rgb(201, 201, 201);
+    position: absolute;
+    top: 50%;
+    right: 18px; /* Adjust as needed */
+    transform: translateY(-50%);
+    transition: transform 0.3s ease; /* Optional: smooth transition */
+  }
+  
+  .mat-expansion-panel-header.mat-expanded::after {
+    content: '\25B2'; /* Unicode character for upward-pointing triangle */
+  }
+  
+  .selector-style {
     padding-top: 10px;
+  }
+  
+  .acordeon-style {
+    margin-left: 20%;
+    margin-right: 20%;
+    max-height: 200vh;
+    overflow-y: hidden;
+  }
+  
+  .tam {
+    height: 75px;
+    font-size: 16px;
+  }
+
+
+.encabezado {
+  margin-top: 5%;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
-.acordeon-style{
-    margin-left: 17%;
-    margin-right: 17%;
+
+.user-list {
+  list-style: none;
+  /*padding: 100px;*/
+  padding-top: 2%;
+  padding-left: 20%;
+  padding-right: 20%;
+  margin: 0;
 }
 
-.encabezado{
-    margin-top: 2%;
-    margin-left: 17%;
-    margin-right: 17%;
+.user-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-name {
+  font-size: 16px;
+  margin-left: 20px;
+}
+
+button.mat-icon-button {
+  padding: 0;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }

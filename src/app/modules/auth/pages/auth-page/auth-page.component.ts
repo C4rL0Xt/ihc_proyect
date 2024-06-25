@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { trigger, style, transition, animate } from '@angular/animations';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth-page',
@@ -18,7 +19,13 @@ import { trigger, style, transition, animate } from '@angular/animations';
 export class AuthPageComponent {
   passwordFieldType: string = 'password';
 
+  constructor(private fb: FormBuilder, private router: Router) {}
+
   togglePasswordVisibility() {
     this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password';
+  }
+
+  irAHome(): void{
+    this.router.navigate(['/home/hi']);
   }
 }

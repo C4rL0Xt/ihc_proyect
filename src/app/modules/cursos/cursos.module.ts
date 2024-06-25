@@ -28,11 +28,13 @@ import { FormsModule } from '@angular/forms';
 import { DetalleCursoComponent } from './componentes/detalle-curso/detalle-curso.component';
 import { MainPageComponent } from './page/main-page/main-page.component';
 import { CoursesServiceService } from './servicios/courses-service.service';
+import { BibliotecaComponent } from './componentes/biblioteca/biblioteca.component';
 @NgModule({
   declarations: [
     CursosPageComponent,
     DetalleCursoComponent,
     MainPageComponent,
+    BibliotecaComponent,
 
   ],
   imports: [

@@ -1,41 +1,4 @@
-<!-- login.component.html -->
-<!--div-- class="login-container">
-  <div class="background-container">
-    <div class="background-overlay"></div>
-    <div class="background-image"></div>
-  </div>
-  <div class="login-form-container">
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
-      <h1 class="company-title">Fisi Classroom</h1>
-      <h2 class="enter-data">Enter your data</h2>
-      <mat-form-field appearance="fill">
-        <div class="email-part">
-          <mat-icon class="icon-email">person</mat-icon>
-          <input formControlName="email" placeholder="Ingresa tu correo" class="input-email">
-        </div>
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <div class="pass-part">
-          <mat-icon class="icon-pass">lock</mat-icon>
-          <input type="password" formControlName="password" placeholder="Ingresa tu contraseña" class="input-pass">
-        </div>
-      </mat-form-field>
-      <button mat-raised-button color="primary" type="submit" class="submit-button">Login</button>
-    </form>
-  </div>
-</!--div-->
-<!--form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
-  <h2 class="form-title">Iniciar Sesión</h2>
-  <mat-form-field appearance="fill">
-    <mat-label>Username</mat-label>
-    <input matInput formControlName="username">
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Password</mat-label>
-    <input matInput type="password" formControlName="password">
-  </mat-form-field>
-  <button mat-raised-button color="primary" type="submit" class="submit-button">Login</button>
-</!--form-->
+
 <div class="login-container">
   <div class="login-card">
     <h1 class="title">Fisi Classroom</h1>
@@ -45,18 +8,18 @@
         <div class="icon">
           <i class="fas fa-envelope"></i>
         </div>
-        <input type="email" placeholder="Enter your email" required>
+        <input type="email" placeholder="Ingresa tu correo" required>
       </div>
       <div class="input-container">
         <div class="icon">
           <i class="fas fa-lock"></i>
         </div>
-        <input id="password" [type]="passwordFieldType" placeholder="Enter your password" required>
+        <input id="password" [type]="passwordFieldType" placeholder="Ingresa tu contraseña" required>
         <div class="toggle-visibility" (click)="togglePasswordVisibility()">
           <i class="fas" [ngClass]="{'fa-eye-slash': passwordFieldType === 'password', 'fa-eye': passwordFieldType === 'text'}"></i>
         </div>
       </div>
-      <button type="submit">Login</button>
+      <button type="submit" (click)="irAHome()">Login</button>
     </form>
   </div>
 </div>
