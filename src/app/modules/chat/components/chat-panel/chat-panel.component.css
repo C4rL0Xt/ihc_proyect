@@ -160,6 +160,8 @@
   padding: 40px;
   max-width: 600px;
   width: 90%;
+  height: 80%;
+  max-height: 500px;
   text-align: center;
 }
 

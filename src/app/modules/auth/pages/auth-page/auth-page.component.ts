@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { trigger, style, transition, animate } from '@angular/animations';
 import { Router } from '@angular/router';
 
@@ -16,10 +16,39 @@ import { Router } from '@angular/router';
     ])
   ]
 })
-export class AuthPageComponent {
+export class AuthPageComponent implements OnInit {
+  data = {
+    email: 'carlos.espinoza@unmsm.edu.pe',
+    password: '12345'
+  };
+  errorSession: boolean = false;
+  formLogin: FormGroup = new FormGroup({});
+
+
   passwordFieldType: string = 'password';
 
-  constructor(private fb: FormBuilder, private router: Router) { }
+  constructor(private router: Router) { }
+
+  ngOnInit(): void {
+    this.formLogin = new FormGroup({
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [
+        Validators.required,
+        Validators.minLength(6),
+        Validators.maxLength(12),
+      ]),
+    });
+  }
+
+  login(): void {
+    const { email, password } = this.formLogin.value;
+    if (email === this.data.email && password === this.data.password) {
+      this.router.navigate(['/home']);
+    } else {
+      this.errorSession = true;
+    }
+  }
+
 
   togglePasswordVisibility() {
     this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password';

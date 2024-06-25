@@ -60,7 +60,7 @@ export class CoursesServiceService {
     {
       courseName: 'Interaccion Hombre Computador',
       teacherName: 'Melani Laveriano Porroa',
-      teacherPhoto: 'assets/images/f1.jpg',
+      teacherPhoto: 'assets/images/user2.jpg',
       credits: 30,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo1',
@@ -201,7 +201,7 @@ export class CoursesServiceService {
     {
       courseName: 'Desarrollo de Sistemas Web',
       teacherName: 'Melani Laveriano Porroa',
-      teacherPhoto: 'assets/images/foto.png',
+      teacherPhoto: 'assets/images/user2.jpg',
       credits: 3,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo1',
@@ -254,7 +254,7 @@ export class CoursesServiceService {
     {
       courseName: 'Base de datos',
       teacherName: 'Espinoza Robles Armando',
-      teacherPhoto: 'assets/images/foto.png',
+      teacherPhoto: 'assets/images/user2.jpg',
       credits: 4,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo1',
@@ -343,7 +343,7 @@ export class CoursesServiceService {
     {
       courseName: 'Curso de ciclo 1',
       teacherName: 'Espinoza Robles Armando',
-      teacherPhoto: 'assets/images/foto.png',
+      teacherPhoto: 'assets/images/user2.jpg',
       credits: 4,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo1',
@@ -396,7 +396,7 @@ export class CoursesServiceService {
     {
       courseName: 'Curso de ciclo 2',
       teacherName: 'Espinoza Robles Armando',
-      teacherPhoto: 'assets/images/foto.png',
+      teacherPhoto: 'assets/images/user2.jpg',
       credits: 4,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo2',
@@ -449,7 +449,7 @@ export class CoursesServiceService {
     {
       courseName: 'Curso de ciclo 2',
       teacherName: 'Espinoza Robles Armando',
-      teacherPhoto: 'assets/images/foto.png',
+      teacherPhoto: 'assets/images/user2.jpg',
       credits: 4,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo2',
@@ -502,7 +502,7 @@ export class CoursesServiceService {
     {
       courseName: 'Curso de ciclo 2',
       teacherName: 'Espinoza Robles Armando',
-      teacherPhoto: 'assets/images/foto.png',
+      teacherPhoto: 'assets/images/user2.jpg',
       credits: 4,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo2',
@@ -555,7 +555,7 @@ export class CoursesServiceService {
     {
       courseName: 'Curso de ciclo 2',
       teacherName: 'Espinoza Robles Armando',
-      teacherPhoto: 'assets/images/foto.png',
+      teacherPhoto: 'assets/images/user2.jpg',
       credits: 4,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo2',
@@ -608,7 +608,7 @@ export class CoursesServiceService {
     {
       courseName: 'Curso de ciclo 2',
       teacherName: 'Espinoza Robles Armando',
-      teacherPhoto: 'assets/images/foto.png',
+      teacherPhoto: 'assets/images/user2.jpg',
       credits: 4,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo2',
@@ -661,7 +661,7 @@ export class CoursesServiceService {
     {
       courseName: 'Curso de ciclo 2',
       teacherName: 'Espinoza Robles Armando',
-      teacherPhoto: 'assets/images/foto.png',
+      teacherPhoto: 'assets/images/user2.jpg',
       credits: 4,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo2',
@@ -714,7 +714,7 @@ export class CoursesServiceService {
     {
       courseName: 'Curso de ciclo 2',
       teacherName: 'Espinoza Robles Armando',
-      teacherPhoto: 'assets/images/foto.png',
+      teacherPhoto: 'assets/images/user2.jpg',
       credits: 4,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo2',
@@ -767,7 +767,7 @@ export class CoursesServiceService {
     {
       courseName: 'Curso de ciclo 2',
       teacherName: 'Espinoza Robles Armando',
-      teacherPhoto: 'assets/images/foto.png',
+      teacherPhoto: 'assets/images/user2.jpg',
       credits: 4,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo2',
@@ -820,7 +820,7 @@ export class CoursesServiceService {
     {
       courseName: 'Curso de ciclo 2',
       teacherName: 'Espinoza Robles Armando',
-      teacherPhoto: 'assets/images/foto.png',
+      teacherPhoto: 'assets/images/user2.jpg',
       credits: 4,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo2',
@@ -873,7 +873,7 @@ export class CoursesServiceService {
     {
       courseName: 'Curso de ciclo 2',
       teacherName: 'Espinoza Robles Armando',
-      teacherPhoto: 'assets/images/foto.png',
+      teacherPhoto: 'assets/images/user2.jpg',
       credits: 4,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo2',
@@ -926,7 +926,7 @@ export class CoursesServiceService {
     {
       courseName: 'Curso de ciclo 2',
       teacherName: 'Espinoza Robles Armando',
-      teacherPhoto: 'assets/images/foto.png',
+      teacherPhoto: 'assets/images/user2.jpg',
       credits: 4,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo2',
@@ -979,7 +979,7 @@ export class CoursesServiceService {
     {
       courseName: 'Curso de ciclo 2',
       teacherName: 'Espinoza Robles Armando',
-      teacherPhoto: 'assets/images/foto.png',
+      teacherPhoto: 'assets/images/user2.jpg',
       credits: 4,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo2',
@@ -1032,7 +1032,7 @@ export class CoursesServiceService {
     {
       courseName: 'Curso de ciclo 2',
       teacherName: 'Espinoza Robles Armando',
-      teacherPhoto: 'assets/images/foto.png',
+      teacherPhoto: 'assets/images/user2.jpg',
       credits: 4,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo2',
@@ -1085,7 +1085,7 @@ export class CoursesServiceService {
     {
       courseName: 'Curso de ciclo 2',
       teacherName: 'Espinoza Robles Armando',
-      teacherPhoto: 'assets/images/foto.png',
+      teacherPhoto: 'assets/images/user2.jpg',
       credits: 4,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo2',
@@ -1138,7 +1138,7 @@ export class CoursesServiceService {
     {
       courseName: 'Curso de ciclo 2',
       teacherName: 'Espinoza Robles Armando',
-      teacherPhoto: 'assets/images/foto.png',
+      teacherPhoto: 'assets/images/user2.jpg',
       credits: 4,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo2',

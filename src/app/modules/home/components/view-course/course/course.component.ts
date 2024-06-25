@@ -22,25 +22,25 @@ export class CourseComponent implements OnInit {
     {
       courseName: 'Interaccion Hombre Computador',
       teacherName: 'Pablo Edwin Lopez Villanueva',
-      teacherPhoto: 'assets/images/foto.png',
+      teacherPhoto: 'assets/images/user2.jpg',
       credits: 3,
-      horario: 'Lunes: de 2:00 pm a 6:00 pm',
+      horario: 'Martes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo1'
     },
     {
-      courseName: 'Interaccion Hombre Computador',
-      teacherName: 'Pablo Edwin Lopez Villanueva',
-      teacherPhoto: 'assets/images/foto.png',
+      courseName: 'Desarrollo de sistemas web',
+      teacherName: 'Armando Espinoza Robles',
+      teacherPhoto: 'assets/images/user2.jpg',
       credits: 3,
-      horario: 'Lunes: de 2:00 pm a 6:00 pm',
+      horario: 'Miercoles: de 5:00 pm a 10:00 pm',
       cycle: 'ciclo1'
     },
     {
-      courseName: 'Curso de ciclo 1',
-      teacherName: 'Espinoza Robles Armando',
-      teacherPhoto: 'assets/images/foto.png',
+      courseName: 'Investigacion Operativa',
+      teacherName: 'Giovanna Valverde Ayala',
+      teacherPhoto: 'assets/images/user2.jpg',
       credits: 4,
-      horario: 'Lunes: de 2:00 pm a 6:00 pm',
+      horario: 'Jueves: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo1'
     }
   ];

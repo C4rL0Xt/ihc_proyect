@@ -47,10 +47,16 @@
   border-radius: 5px;
 }
 
+.header-notification {
+  position: relative;
+}
+
 .header-notification-button {
   background: none;
   border: none;
   cursor: pointer;
+  position: relative;
+  padding: 5px;
 }
 
 .header-notification-button:hover .header-notification-icon {
@@ -61,6 +67,75 @@
 .header-notification-icon {
   height: 24px;
 }
+
+.notification-indicator {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  background-color: red;
+  border-radius: 50%;
+  display: block;
+}
+
+.notification-menu {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: white;
+  color: black;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 280px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.notification-header {
+  background-color: #1b3c84;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.notification-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.notification-item {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.notification-item:last-child {
+  border-bottom: none;
+}
+
+.empty-notification {
+  padding: 10px;
+  text-align: center;
+  color: #999;
+}
+
+.notification-footer {
+  background-color: #f0f0f0;
+  padding: 10px;
+  text-align: center;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.notification-footer a {
+  color: #1b3c84;
+  text-decoration: none;
+  font-weight: bold;
+}
+
 
 .header-user {
   display: flex;
@@ -96,6 +171,7 @@
 }
 
 @media (min-width: 768px) {
+
   .header-left,
   .header-right {
     flex: 0 1 auto;

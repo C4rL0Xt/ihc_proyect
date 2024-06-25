@@ -6,7 +6,7 @@
     <div class="header-opciones">
       <a routerLink="/home" [ngClass]="{'active': selectedOption === 'home'}" (click)="selectOption('home')">Home</a>
       <a routerLink="/home/calendar" [ngClass]="{'active': selectedOption === 'calendar'}"
-        (click)="selectOption('calendar')">Calendar</a>
+        (click)="selectOption('calendar')">Calendario</a>
       <a routerLink="/home/cursos" [ngClass]="{'active': selectedOption === 'cursos'}"
         (click)="selectOption('cursos')">Mis Cursos</a>
       <a routerLink="/home/chat" [ngClass]="{'active': selectedOption === 'chat'}" (click)="selectOption('chat')">Mi
@@ -16,15 +16,32 @@
   </div>
   <div class="header-right">
     <div class="header-notification">
-      <button class="header-notification-button">
+      <button class="header-notification-button" (click)="toggleNotificationMenu()">
         <img src="assets/images/notificacion.svg" class="header-notification-icon" alt="Notification">
+        <span class="notification-indicator" *ngIf="hasUnreadNotifications"></span>
       </button>
+      <div class="notification-menu" *ngIf="isNotificationMenuOpen">
+        <div class="notification-header">
+          Notifications
+        </div>
+        <div class="notification-list">
+          <div class="notification-item" *ngFor="let notification of notifications">
+            {{ notification.message }}
+          </div>
+          <div class="empty-notification" *ngIf="notifications.length === 0">
+            No hay notificaciones nuevas
+          </div>
+        </div>
+        <div class="notification-footer">
+          <a>Ver todos</a>
+        </div>
+      </div>
     </div>
     <div class="header-user">
       <div class="header-user-name">Carlos Daniel Espinoza Ramirez</div>
       <a routerLink="/home/dashboard"><img class="header-user-icon" src="assets/images/user.svg" alt="User"></a>
     </div>
-    <div class="header-logout">
+    <div class="header-logout" routerLink="/">
       <img class="header-logout-icon" src="assets/images/logout.svg" alt="Logout">
       <div class="header-logout-text">Salir</div>
     </div>

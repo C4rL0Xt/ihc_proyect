@@ -2,25 +2,29 @@
   <div class="login-card">
     <h1 class="title">Fisi Classroom</h1>
     <h2 class="subtitle">Ingrese sus datos</h2>
-    <form>
+    <form (ngSubmit)="login()" [formGroup]="formLogin">
       <div class="input-container">
         <div class="icon">
           <i class="fas fa-envelope"></i>
         </div>
-        <input type="email" placeholder="Ingresa tu correo" required>
+        <input formControlName="email" type="email" placeholder="Ingresa tu correo" required>
       </div>
       <div class="input-container">
         <div class="icon">
           <i class="fas fa-lock"></i>
         </div>
-        <input id="password" [type]="passwordFieldType" placeholder="Ingresa tu contraseña" required>
+        <input formControlName="password" id="password" [type]="passwordFieldType" placeholder="Ingresa tu contraseña"
+          required>
         <div class="toggle-visibility" (click)="togglePasswordVisibility()">
           <i class="fas"
             [ngClass]="{'fa-eye-slash': passwordFieldType === 'password', 'fa-eye': passwordFieldType === 'text'}"></i>
         </div>
+        <div *ngIf="errorSession">
+          Ocurrio un error en el email o password
+        </div>
       </div>
 
     </form>
-    <button type="submit" (click)="irAHome()" routerLink="/home">Login</button>
+    <button (click)="irAHome()">Login</button>
   </div>
 </div>

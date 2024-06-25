@@ -16,10 +16,10 @@ interface Event {
 })
 export class EventsComponent {
   events: Event[] = [
-    { date: '2023-12-01', title: 'Examen Final de Matemáticas', description: 'Examen final del curso de Matemáticas.' },
-    { date: '2023-12-05', title: 'Presentación de Proyecto', description: 'Presentación del proyecto de fin de curso.' },
-    { date: '2023-12-10', title: 'Verbena Navideña', description: 'Evento festivo de Navidad en la facultad.' },
-    { date: '2023-12-15', title: 'Entrega de Prácticas', description: 'Fecha límite para la entrega de prácticas.' },
+    { date: '2024-06-25', title: 'Exposicion IHC', description: 'Prototipo de proyecto' },
+    { date: '2024-06-26', title: 'Copa America', description: 'Peru vs Canada' },
+    { date: '2024-06-26', title: 'Laboratorio DSW', description: 'Presentacion del laboratorio Angular' },
+    { date: '2024-06-27', title: 'Entrega de Prácticas IO', description: 'Practica Calificada 2' },
   ];
 
   constructor() { }

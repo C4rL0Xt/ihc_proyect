@@ -15,19 +15,19 @@ export class TaskComponent {
 
   folders: Section[] = [
     {
-      name: 'Fisica',
-      updated: new Date('1/1/16'),
-      description: 'Leer Articulo de Estatica',
+      name: 'Internet de las Cosas',
+      updated: new Date('06/30/24'),
+      description: 'Leer Articulo de Smart Cities',
     },
     {
-      name: 'Base de Datos',
-      updated: new Date('1/17/16'),
-      description: 'Leer Articulo de Estatica'
+      name: 'Inteligencia Artificial',
+      updated: new Date('07/01/24'),
+      description: 'Crear musica con IA'
     },
     {
-      name: 'POO',
-      updated: new Date('1/28/16'),
-      description: 'Leer Articulo de Estatica'
+      name: 'Inteligencia de negocios',
+      updated: new Date('07/04/24'),
+      description: 'Exposicion Final'
     },
   ];
 
