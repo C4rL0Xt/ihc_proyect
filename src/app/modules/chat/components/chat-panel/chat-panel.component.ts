@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { ChatService, Contact } from '../../service/chat.service';
+import { EmojiEvent } from '@ctrl/ngx-emoji-mart/ngx-emoji';
 
 @Component({
   selector: 'app-chat-panel',
@@ -17,14 +19,30 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
     ])
   ]
 })
-export class ChatPanelComponent {
+export class ChatPanelComponent implements OnInit {
   isMenuOpen = false;
   newMessageText = '';
-  isChatOpen = true;
+  isChatOpen = false;
+  isEmojiPickerOpen = false;
+
+  currentContact: Contact | null = null;
   messages = [
-    { text: 'Hello! How are you?', sent: false, time: '10:30 AM' },
-    { text: 'I\'m good, thanks! How about you?', sent: true, time: '10:31 AM' }
+    { text: 'Hola, como estas?', sent: false, time: '10:30 AM', fileUrl: '' },
+    { text: 'Bien, gracias! Tu que tal?', sent: true, time: '10:31 AM', fileUrl: '' }
   ];
+
+  constructor(private chatService: ChatService) {
+
+  }
+
+  ngOnInit() {
+    this.chatService.currentContact.subscribe(contact => {
+      this.currentContact = contact;
+      this.isChatOpen = !!contact;
+    });
+  }
+
+  @ViewChild('fileInput', { static: false }) fileInput!: ElementRef<HTMLInputElement>;
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
@@ -43,17 +61,38 @@ export class ChatPanelComponent {
       this.messages.push({
         text: this.newMessageText,
         sent: true,
-        time: timeString
+        time: timeString,
+        fileUrl: ''
       });
       this.newMessageText = '';
+      this.isEmojiPickerOpen = false;
     }
   }
 
-  attachFile() {
-    // Add your attach file logic here
+  attachFile(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length > 0) {
+      const file = input.files[0];
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        const currentTime = new Date();
+        const timeString = `${currentTime.getHours()}:${currentTime.getMinutes()}`;
+        this.messages.push({
+          text: `File: ${file.name}`,
+          sent: true,
+          time: timeString,
+          fileUrl: e.target.result
+        });
+      };
+      reader.readAsDataURL(file);
+    }
+  }
+  toggleEmojiPicker() {
+    this.isEmojiPickerOpen = !this.isEmojiPickerOpen;
   }
 
-  openEmojiPicker() {
-    // Add your emoji picker logic here
+
+  addEmoji(event: EmojiEvent) {
+    this.newMessageText += event.emoji.native;
   }
 }

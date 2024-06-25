@@ -19,13 +19,13 @@ import { Router } from '@angular/router';
 export class AuthPageComponent {
   passwordFieldType: string = 'password';
 
-  constructor(private fb: FormBuilder, private router: Router) {}
+  constructor(private fb: FormBuilder, private router: Router) { }
 
   togglePasswordVisibility() {
     this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password';
   }
 
-  irAHome(): void{
-    this.router.navigate(['/home/hi']);
+  irAHome(): void {
+    this.router.navigate(['/home']);
   }
 }

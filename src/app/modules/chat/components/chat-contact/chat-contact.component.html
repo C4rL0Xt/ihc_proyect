@@ -1,28 +1,28 @@
 <div class="layout">
   <div class="layout-header">
-      <input type="text" placeholder=" Buscar..." name="" class="input-search">
-      <mat-icon class="icon">search</mat-icon>
+    <input type="text" placeholder=" Buscar..." name="" class="input-search">
+    <mat-icon class="icon">search</mat-icon>
   </div>
-  
+
   <div class="layout-body">
     <div class="separator"></div>
-      <div class="body-content">
-        <mat-sidenav mode="side" opened>
-          <mat-nav-list class="list-container">
-            <ng-container *ngFor="let course of courses">
-              <div class="course-item">
-                <mat-icon class="avatar">face</mat-icon>
-                <div class="content">
-                  <div class="top-row">
-                    <span class="course-name">Nombre</span>
-                    <span class="date">10:30 AM</span>
-                  </div>
-                  <span class="last-message">Ultimo mensaje</span>
+    <div class="body-content">
+      <mat-sidenav mode="side" opened>
+        <mat-nav-list class="list-container">
+          <ng-container *ngFor="let contact of contacts">
+            <div class="course-item" (click)="selectContact(contact)">
+              <mat-icon class="avatar">face</mat-icon>
+              <div class="content">
+                <div class="top-row">
+                  <span class="course-name">{{contact.firstName}} {{contact.lastName}}</span>
+                  <span class="date">{{contact.lastMessage.timestamp | date:'HH:mm'}}</span>
                 </div>
+                <span class="last-message">{{contact.lastMessage.content}}</span>
               </div>
-            </ng-container>
-          </mat-nav-list>
-        </mat-sidenav>
-      </div>
+            </div>
+          </ng-container>
+        </mat-nav-list>
+      </mat-sidenav>
+    </div>
   </div>
 </div>

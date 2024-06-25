@@ -1,68 +1,69 @@
 <section class="layout" *ngIf="isChatOpen; else empty">
-    <div class="header">
-        <div class="header-left">
-          <mat-icon>face</mat-icon>
-          <span class="name">Melani Yulli Laveriano Porroa</span>
-        </div>
-        <div class="header-right">
-          <button class="icon-btn">
-            <mat-icon>search</mat-icon>
-          </button>
-          <button class="icon-btn" (click)="toggleMenu()">
-            <mat-icon>more_vert</mat-icon>
-          </button>
-          <div class="menu" *ngIf="isMenuOpen" [@menuAnimation]>
-            <button (click)="menuAction('closeChat')">Cerrar chat</button>
-            <button (click)="menuAction('emptyChat')">Vaciar chat</button>
-            <button (click)="menuAction('deleteChat')">Eliminar Chat</button>
-          </div>
-        </div>
+  <div class="header" *ngIf="currentContact">
+    <div class="header-left">
+      <mat-icon>face</mat-icon>
+      <span class="name">{{currentContact.firstName}} {{currentContact.lastName}}</span>
     </div>
-    <div class="center">
-        <div *ngFor="let message of messages" [ngClass]="{'sent': message.sent, 'received': !message.sent}" class="message">
-          <div class="message-content">
-            <mat-icon class="user-icon">{{ message.sent ? 'person' : 'person_outline' }}</mat-icon>
-            <p class="message-text">{{ message.text }}</p>
-          </div>
-          <div class="cont-time">
-            <span class="message-time">{{ message.time }}</span>
-          </div>
-        </div>
+    <div class="header-right">
+      <button class="icon-btn">
+        <!--mat-icon>search</!--mat-icon-->
+      </button>
+      <button class="icon-btn" (click)="toggleMenu()">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <div class="menu" *ngIf="isMenuOpen" [@menuAnimation]>
+        <button (click)="menuAction('closeChat')">Cerrar chat</button>
+        <button (click)="menuAction('emptyChat')">Vaciar chat</button>
+        <button (click)="menuAction('deleteChat')">Eliminar Chat</button>
+      </div>
     </div>
-    <div class="footer">
-      <button class="emoji-btn">😊</button>
-      <button class="attach-btn">+</button>
-      <input type="text" placeholder="Escribe un mensaje">
-      <button class="send-btn">Enviar</button>
+  </div>
+  <div class="center">
+    <div *ngFor="let message of messages" [ngClass]="{'sent': message.sent, 'received': !message.sent}" class="message">
+      <div class="message-content">
+        <mat-icon class="user-icon">{{ message.sent ? 'person' : 'person_outline' }}</mat-icon>
+        <p class="message-text">{{ message.text }}</p>
+      </div>
+      <div class="cont-time">
+        <span class="message-time">{{ message.time }}</span>
+      </div>
     </div>
-  </section>
+  </div>
+  <div class="footer">
+    <button class="attach-btn" (click)="fileInput.click()">📎</button>
+    <input #fileInput type="file" style="display: none;" (change)="attachFile($event)">
+    <input type="text" placeholder="Escribe un mensaje" [(ngModel)]="newMessageText">
+    <button class="send-btn" (click)="sendMessage()">Enviar</button>
+  </div>
+</section>
 
-  <ng-template #empty>
-    <div class="empty-a">
-        <div class="chat-welcome">
-            <div class="welcome-content">
-              <img src="https://cdn-icons-png.flaticon.com/512/134/134914.png" alt="Chat Icon" class="welcome-icon">
-              <h1>Bienvenido al Chat de la Facultad de Sistemas e Informatica</h1>
-              <p class="subtitle">Conecta, aprende y colabora con compañeros y profesores</p>
-              <div class="divider"></div>
-              <h2>¿Qué puedes hacer aquí?</h2>
-              <div class="usage-suggestions">
-                <div class="suggestion-item">
-                  <img src="https://cdn-icons-png.flaticon.com/512/1484/1484560.png" alt="Question Icon" class="suggestion-icon">
-                  <p>Hacer preguntas sobre tus clases</p>
-                </div>
-                <div class="suggestion-item">
-                  <img src="https://cdn-icons-png.flaticon.com/512/1534/1534938.png" alt="Group Icon" class="suggestion-icon">
-                  <p>Coordinar trabajos en grupo</p>
-                </div>
-                <div class="suggestion-item">
-                  <img src="https://cdn-icons-png.flaticon.com/512/1071/1071928.png" alt="Help Icon" class="suggestion-icon">
-                  <p>Obtener ayuda de tus profesores</p>
-                </div>
-              </div>
-              <div class="divider"></div>
-              <p class="etiquette">Recuerda mantener un tono respetuoso y profesional en todas tus conversaciones</p>
-            </div>
+<ng-template #empty>
+  <div class="empty-a">
+    <div class="chat-welcome">
+      <div class="welcome-content">
+        <img src="https://cdn-icons-png.flaticon.com/512/134/134914.png" alt="Chat Icon" class="welcome-icon">
+        <h1>Bienvenido al Chat de la Facultad de Sistemas e Informatica</h1>
+        <p class="subtitle">Conecta, aprende y colabora con compañeros y profesores</p>
+        <div class="divider"></div>
+        <h2>¿Qué puedes hacer aquí?</h2>
+        <div class="usage-suggestions">
+          <div class="suggestion-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/1484/1484560.png" alt="Question Icon"
+              class="suggestion-icon">
+            <p>Hacer preguntas sobre tus clases</p>
           </div>
+          <div class="suggestion-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/1534/1534938.png" alt="Group Icon" class="suggestion-icon">
+            <p>Coordinar trabajos en grupo</p>
+          </div>
+          <div class="suggestion-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/1071/1071928.png" alt="Help Icon" class="suggestion-icon">
+            <p>Obtener ayuda de tus profesores</p>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <p class="etiquette">Recuerda mantener un tono respetuoso y profesional en todas tus conversaciones</p>
+      </div>
     </div>
-  </ng-template>
+  </div>
+</ng-template>

@@ -1,4 +1,3 @@
-
 <div class="login-container">
   <div class="login-card">
     <h1 class="title">Fisi Classroom</h1>
@@ -16,12 +15,12 @@
         </div>
         <input id="password" [type]="passwordFieldType" placeholder="Ingresa tu contraseña" required>
         <div class="toggle-visibility" (click)="togglePasswordVisibility()">
-          <i class="fas" [ngClass]="{'fa-eye-slash': passwordFieldType === 'password', 'fa-eye': passwordFieldType === 'text'}"></i>
+          <i class="fas"
+            [ngClass]="{'fa-eye-slash': passwordFieldType === 'password', 'fa-eye': passwordFieldType === 'text'}"></i>
         </div>
       </div>
-      <button type="submit" (click)="irAHome()">Login</button>
+
     </form>
+    <button type="submit" (click)="irAHome()" routerLink="/home">Login</button>
   </div>
 </div>
-
-

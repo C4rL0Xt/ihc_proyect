@@ -19,17 +19,17 @@ export interface Week {
   materials: Material[];
 }
 
-export interface Alumn{
+export interface Alumn {
   nombreAlumno: string;
   correo: string;
 }
 
-export interface Libro{
+export interface Libro {
   nombreLibro: string;
   ruta: string;
 }
 
-export interface Articulo{
+export interface Articulo {
   nombreArticulo: string;
   ruta: string;
 }
@@ -60,7 +60,7 @@ export class CoursesServiceService {
     {
       courseName: 'Interaccion Hombre Computador',
       teacherName: 'Melani Laveriano Porroa',
-      teacherPhoto: 'assets/images/foto.png',
+      teacherPhoto: 'assets/images/f1.jpg',
       credits: 30,
       horario: 'Lunes: de 2:00 pm a 6:00 pm',
       cycle: 'ciclo1',
@@ -166,29 +166,33 @@ export class CoursesServiceService {
             { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
           ]
         }],
-      alumnos:[
+      alumnos: [
         {
           nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
           correo: 'carlos.espinoza23@unmsm.edu.pe'
-        },{
+        }, {
           nombreAlumno: 'Melani Laveriano Porroa',
           correo: 'melani.laveriano@unmsm.edu.pe'
         }
       ],
       rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
       rutasLibros: [
-        {nombreLibro: 'Libro1',
+        {
+          nombreLibro: 'Libro1',
           ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
         },
-        {nombreLibro: 'Libro2',
+        {
+          nombreLibro: 'Libro2',
           ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
         }
       ],
       rutasArticulos: [
-        {nombreArticulo: 'Articulo1',
+        {
+          nombreArticulo: 'Articulo1',
           ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
         },
-        {nombreArticulo: 'Articulo2',
+        {
+          nombreArticulo: 'Articulo2',
           ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
         }
 
@@ -215,29 +219,33 @@ export class CoursesServiceService {
             { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
           ]
         }],
-        alumnos:[
-          {
-            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
-            correo: 'carlos.espinoza23@unmsm.edu.pe'
-          },{
-            nombreAlumno: 'Melani Laveriano Porroa',
-            correo: 'melani.laveriano@unmsm.edu.pe'
-          }
-        ],
+      alumnos: [
+        {
+          nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+          correo: 'carlos.espinoza23@unmsm.edu.pe'
+        }, {
+          nombreAlumno: 'Melani Laveriano Porroa',
+          correo: 'melani.laveriano@unmsm.edu.pe'
+        }
+      ],
       rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
       rutasLibros: [
-        {nombreLibro: 'Libro2',
+        {
+          nombreLibro: 'Libro2',
           ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
         },
-        {nombreLibro: 'Libro2',
+        {
+          nombreLibro: 'Libro2',
           ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
         }
       ],
       rutasArticulos: [
-        {nombreArticulo: 'Articulo1',
+        {
+          nombreArticulo: 'Articulo1',
           ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
         },
-        {nombreArticulo: 'Articulo2',
+        {
+          nombreArticulo: 'Articulo2',
           ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
         }
 
@@ -264,69 +272,73 @@ export class CoursesServiceService {
             { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
           ]
         }],
-        alumnos:[
-          {
-            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
-            correo: 'carlos.espinoza23@unmsm.edu.pe'
-          },{
-            nombreAlumno: 'Melani Laveriano Porroa',
-            correo: 'melani.laveriano@unmsm.edu.pe'
-          },{
-            nombreAlumno: 'Melani Laveriano Porroa',
-            correo: 'melani.laveriano@unmsm.edu.pe'
-          },{
-            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
-            correo: 'carlos.espinoza23@unmsm.edu.pe'
-          },{
-            nombreAlumno: 'Melani Laveriano Porroa',
-            correo: 'melani.laveriano@unmsm.edu.pe'
-          },{
-            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
-            correo: 'carlos.espinoza23@unmsm.edu.pe'
-          },{
-            nombreAlumno: 'Melani Laveriano Porroa',
-            correo: 'melani.laveriano@unmsm.edu.pe'
-          },{
-            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
-            correo: 'carlos.espinoza23@unmsm.edu.pe'
-          },{
-            nombreAlumno: 'Melani Laveriano Porroa',
-            correo: 'melani.laveriano@unmsm.edu.pe'
-          },{
-            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
-            correo: 'carlos.espinoza23@unmsm.edu.pe'
-          },{
-            nombreAlumno: 'Melani Laveriano Porroa',
-            correo: 'melani.laveriano@unmsm.edu.pe'
-          },{
-            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
-            correo: 'carlos.espinoza23@unmsm.edu.pe'
-          },{
-            nombreAlumno: 'Melani Laveriano Porroa',
-            correo: 'melani.laveriano@unmsm.edu.pe'
-          },{
-            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
-            correo: 'carlos.espinoza23@unmsm.edu.pe'
-          }
-        ],
-        rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
-        rutasLibros: [
-          {nombreLibro: 'Libro2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          },
-          {nombreLibro: 'Libro2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          }
-        ],
-        rutasArticulos: [
-          {nombreArticulo: 'Articulo1',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          },
-          {nombreArticulo: 'Articulo2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          }
-  
-        ]
+      alumnos: [
+        {
+          nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+          correo: 'carlos.espinoza23@unmsm.edu.pe'
+        }, {
+          nombreAlumno: 'Melani Laveriano Porroa',
+          correo: 'melani.laveriano@unmsm.edu.pe'
+        }, {
+          nombreAlumno: 'Melani Laveriano Porroa',
+          correo: 'melani.laveriano@unmsm.edu.pe'
+        }, {
+          nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+          correo: 'carlos.espinoza23@unmsm.edu.pe'
+        }, {
+          nombreAlumno: 'Melani Laveriano Porroa',
+          correo: 'melani.laveriano@unmsm.edu.pe'
+        }, {
+          nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+          correo: 'carlos.espinoza23@unmsm.edu.pe'
+        }, {
+          nombreAlumno: 'Melani Laveriano Porroa',
+          correo: 'melani.laveriano@unmsm.edu.pe'
+        }, {
+          nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+          correo: 'carlos.espinoza23@unmsm.edu.pe'
+        }, {
+          nombreAlumno: 'Melani Laveriano Porroa',
+          correo: 'melani.laveriano@unmsm.edu.pe'
+        }, {
+          nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+          correo: 'carlos.espinoza23@unmsm.edu.pe'
+        }, {
+          nombreAlumno: 'Melani Laveriano Porroa',
+          correo: 'melani.laveriano@unmsm.edu.pe'
+        }, {
+          nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+          correo: 'carlos.espinoza23@unmsm.edu.pe'
+        }, {
+          nombreAlumno: 'Melani Laveriano Porroa',
+          correo: 'melani.laveriano@unmsm.edu.pe'
+        }, {
+          nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+          correo: 'carlos.espinoza23@unmsm.edu.pe'
+        }
+      ],
+      rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
+      rutasLibros: [
+        {
+          nombreLibro: 'Libro2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        },
+        {
+          nombreLibro: 'Libro2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        }
+      ],
+      rutasArticulos: [
+        {
+          nombreArticulo: 'Articulo1',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        },
+        {
+          nombreArticulo: 'Articulo2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        }
+
+      ]
     },
     {
       courseName: 'Curso de ciclo 1',
@@ -349,33 +361,37 @@ export class CoursesServiceService {
             { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
           ]
         }],
-        alumnos:[
-          {
-            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
-            correo: 'carlos.espinoza23@unmsm.edu.pe'
-          },{
-            nombreAlumno: 'Melani Laveriano Porroa',
-            correo: 'melani.laveriano@unmsm.edu.pe'
-          }
-        ],
-        rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
-        rutasLibros: [
-          {nombreLibro: 'Libro2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          },
-          {nombreLibro: 'Libro2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          }
-        ],
-        rutasArticulos: [
-          {nombreArticulo: 'Articulo1',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          },
-          {nombreArticulo: 'Articulo2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          }
-  
-        ]
+      alumnos: [
+        {
+          nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+          correo: 'carlos.espinoza23@unmsm.edu.pe'
+        }, {
+          nombreAlumno: 'Melani Laveriano Porroa',
+          correo: 'melani.laveriano@unmsm.edu.pe'
+        }
+      ],
+      rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
+      rutasLibros: [
+        {
+          nombreLibro: 'Libro2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        },
+        {
+          nombreLibro: 'Libro2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        }
+      ],
+      rutasArticulos: [
+        {
+          nombreArticulo: 'Articulo1',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        },
+        {
+          nombreArticulo: 'Articulo2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        }
+
+      ]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -398,33 +414,37 @@ export class CoursesServiceService {
             { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
           ]
         }],
-        alumnos:[
-          {
-            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
-            correo: 'carlos.espinoza23@unmsm.edu.pe'
-          },{
-            nombreAlumno: 'Melani Laveriano Porroa',
-            correo: 'melani.laveriano@unmsm.edu.pe'
-          }
-        ],
-        rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
-        rutasLibros: [
-          {nombreLibro: 'Libro2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          },
-          {nombreLibro: 'Libro2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          }
-        ],
-        rutasArticulos: [
-          {nombreArticulo: 'Articulo1',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          },
-          {nombreArticulo: 'Articulo2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          }
-  
-        ]
+      alumnos: [
+        {
+          nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+          correo: 'carlos.espinoza23@unmsm.edu.pe'
+        }, {
+          nombreAlumno: 'Melani Laveriano Porroa',
+          correo: 'melani.laveriano@unmsm.edu.pe'
+        }
+      ],
+      rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
+      rutasLibros: [
+        {
+          nombreLibro: 'Libro2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        },
+        {
+          nombreLibro: 'Libro2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        }
+      ],
+      rutasArticulos: [
+        {
+          nombreArticulo: 'Articulo1',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        },
+        {
+          nombreArticulo: 'Articulo2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        }
+
+      ]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -447,33 +467,37 @@ export class CoursesServiceService {
             { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
           ]
         }],
-        alumnos:[
-          {
-            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
-            correo: 'carlos.espinoza23@unmsm.edu.pe'
-          },{
-            nombreAlumno: 'Melani Laveriano Porroa',
-            correo: 'melani.laveriano@unmsm.edu.pe'
-          }
-        ],
-        rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
-        rutasLibros: [
-          {nombreLibro: 'Libro2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          },
-          {nombreLibro: 'Libro2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          }
-        ],
-        rutasArticulos: [
-          {nombreArticulo: 'Articulo1',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          },
-          {nombreArticulo: 'Articulo2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          }
-  
-        ]
+      alumnos: [
+        {
+          nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+          correo: 'carlos.espinoza23@unmsm.edu.pe'
+        }, {
+          nombreAlumno: 'Melani Laveriano Porroa',
+          correo: 'melani.laveriano@unmsm.edu.pe'
+        }
+      ],
+      rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
+      rutasLibros: [
+        {
+          nombreLibro: 'Libro2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        },
+        {
+          nombreLibro: 'Libro2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        }
+      ],
+      rutasArticulos: [
+        {
+          nombreArticulo: 'Articulo1',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        },
+        {
+          nombreArticulo: 'Articulo2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        }
+
+      ]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -496,33 +520,37 @@ export class CoursesServiceService {
             { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
           ]
         }],
-        alumnos:[
-          {
-            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
-            correo: 'carlos.espinoza23@unmsm.edu.pe'
-          },{
-            nombreAlumno: 'Melani Laveriano Porroa',
-            correo: 'melani.laveriano@unmsm.edu.pe'
-          }
-        ],
-        rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
-        rutasLibros: [
-          {nombreLibro: 'Libro2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          },
-          {nombreLibro: 'Libro2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          }
-        ],
-        rutasArticulos: [
-          {nombreArticulo: 'Articulo1',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          },
-          {nombreArticulo: 'Articulo2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          }
-  
-        ]
+      alumnos: [
+        {
+          nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+          correo: 'carlos.espinoza23@unmsm.edu.pe'
+        }, {
+          nombreAlumno: 'Melani Laveriano Porroa',
+          correo: 'melani.laveriano@unmsm.edu.pe'
+        }
+      ],
+      rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
+      rutasLibros: [
+        {
+          nombreLibro: 'Libro2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        },
+        {
+          nombreLibro: 'Libro2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        }
+      ],
+      rutasArticulos: [
+        {
+          nombreArticulo: 'Articulo1',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        },
+        {
+          nombreArticulo: 'Articulo2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        }
+
+      ]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -545,33 +573,37 @@ export class CoursesServiceService {
             { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
           ]
         }],
-        alumnos:[
-          {
-            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
-            correo: 'carlos.espinoza23@unmsm.edu.pe'
-          },{
-            nombreAlumno: 'Melani Laveriano Porroa',
-            correo: 'melani.laveriano@unmsm.edu.pe'
-          }
-        ],
-        rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
-        rutasLibros: [
-          {nombreLibro: 'Libro2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          },
-          {nombreLibro: 'Libro2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          }
-        ],
-        rutasArticulos: [
-          {nombreArticulo: 'Articulo1',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          },
-          {nombreArticulo: 'Articulo2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          }
-  
-        ]
+      alumnos: [
+        {
+          nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+          correo: 'carlos.espinoza23@unmsm.edu.pe'
+        }, {
+          nombreAlumno: 'Melani Laveriano Porroa',
+          correo: 'melani.laveriano@unmsm.edu.pe'
+        }
+      ],
+      rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
+      rutasLibros: [
+        {
+          nombreLibro: 'Libro2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        },
+        {
+          nombreLibro: 'Libro2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        }
+      ],
+      rutasArticulos: [
+        {
+          nombreArticulo: 'Articulo1',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        },
+        {
+          nombreArticulo: 'Articulo2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        }
+
+      ]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -594,33 +626,37 @@ export class CoursesServiceService {
             { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
           ]
         }],
-        alumnos:[
-          {
-            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
-            correo: 'carlos.espinoza23@unmsm.edu.pe'
-          },{
-            nombreAlumno: 'Melani Laveriano Porroa',
-            correo: 'melani.laveriano@unmsm.edu.pe'
-          }
-        ],
-        rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
-        rutasLibros: [
-          {nombreLibro: 'Libro2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          },
-          {nombreLibro: 'Libro2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          }
-        ],
-        rutasArticulos: [
-          {nombreArticulo: 'Articulo1',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          },
-          {nombreArticulo: 'Articulo2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          }
-  
-        ]
+      alumnos: [
+        {
+          nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+          correo: 'carlos.espinoza23@unmsm.edu.pe'
+        }, {
+          nombreAlumno: 'Melani Laveriano Porroa',
+          correo: 'melani.laveriano@unmsm.edu.pe'
+        }
+      ],
+      rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
+      rutasLibros: [
+        {
+          nombreLibro: 'Libro2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        },
+        {
+          nombreLibro: 'Libro2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        }
+      ],
+      rutasArticulos: [
+        {
+          nombreArticulo: 'Articulo1',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        },
+        {
+          nombreArticulo: 'Articulo2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        }
+
+      ]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -643,33 +679,37 @@ export class CoursesServiceService {
             { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
           ]
         }],
-        alumnos:[
-          {
-            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
-            correo: 'carlos.espinoza23@unmsm.edu.pe'
-          },{
-            nombreAlumno: 'Melani Laveriano Porroa',
-            correo: 'melani.laveriano@unmsm.edu.pe'
-          }
-        ],
-        rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
-        rutasLibros: [
-          {nombreLibro: 'Libro2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          },
-          {nombreLibro: 'Libro2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          }
-        ],
-        rutasArticulos: [
-          {nombreArticulo: 'Articulo1',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          },
-          {nombreArticulo: 'Articulo2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          }
-  
-        ]
+      alumnos: [
+        {
+          nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+          correo: 'carlos.espinoza23@unmsm.edu.pe'
+        }, {
+          nombreAlumno: 'Melani Laveriano Porroa',
+          correo: 'melani.laveriano@unmsm.edu.pe'
+        }
+      ],
+      rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
+      rutasLibros: [
+        {
+          nombreLibro: 'Libro2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        },
+        {
+          nombreLibro: 'Libro2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        }
+      ],
+      rutasArticulos: [
+        {
+          nombreArticulo: 'Articulo1',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        },
+        {
+          nombreArticulo: 'Articulo2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        }
+
+      ]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -692,33 +732,37 @@ export class CoursesServiceService {
             { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
           ]
         }],
-        alumnos:[
-          {
-            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
-            correo: 'carlos.espinoza23@unmsm.edu.pe'
-          },{
-            nombreAlumno: 'Melani Laveriano Porroa',
-            correo: 'melani.laveriano@unmsm.edu.pe'
-          }
-        ],
-        rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
-        rutasLibros: [
-          {nombreLibro: 'Libro2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          },
-          {nombreLibro: 'Libro2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          }
-        ],
-        rutasArticulos: [
-          {nombreArticulo: 'Articulo1',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          },
-          {nombreArticulo: 'Articulo2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          }
-  
-        ]
+      alumnos: [
+        {
+          nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+          correo: 'carlos.espinoza23@unmsm.edu.pe'
+        }, {
+          nombreAlumno: 'Melani Laveriano Porroa',
+          correo: 'melani.laveriano@unmsm.edu.pe'
+        }
+      ],
+      rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
+      rutasLibros: [
+        {
+          nombreLibro: 'Libro2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        },
+        {
+          nombreLibro: 'Libro2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        }
+      ],
+      rutasArticulos: [
+        {
+          nombreArticulo: 'Articulo1',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        },
+        {
+          nombreArticulo: 'Articulo2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        }
+
+      ]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -741,33 +785,37 @@ export class CoursesServiceService {
             { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
           ]
         }],
-        alumnos:[
-          {
-            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
-            correo: 'carlos.espinoza23@unmsm.edu.pe'
-          },{
-            nombreAlumno: 'Melani Laveriano Porroa',
-            correo: 'melani.laveriano@unmsm.edu.pe'
-          }
-        ],
-        rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
-        rutasLibros: [
-          {nombreLibro: 'Libro2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          },
-          {nombreLibro: 'Libro2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          }
-        ],
-        rutasArticulos: [
-          {nombreArticulo: 'Articulo1',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          },
-          {nombreArticulo: 'Articulo2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          }
-  
-        ]
+      alumnos: [
+        {
+          nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+          correo: 'carlos.espinoza23@unmsm.edu.pe'
+        }, {
+          nombreAlumno: 'Melani Laveriano Porroa',
+          correo: 'melani.laveriano@unmsm.edu.pe'
+        }
+      ],
+      rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
+      rutasLibros: [
+        {
+          nombreLibro: 'Libro2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        },
+        {
+          nombreLibro: 'Libro2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        }
+      ],
+      rutasArticulos: [
+        {
+          nombreArticulo: 'Articulo1',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        },
+        {
+          nombreArticulo: 'Articulo2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        }
+
+      ]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -790,33 +838,37 @@ export class CoursesServiceService {
             { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
           ]
         }],
-        alumnos:[
-          {
-            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
-            correo: 'carlos.espinoza23@unmsm.edu.pe'
-          },{
-            nombreAlumno: 'Melani Laveriano Porroa',
-            correo: 'melani.laveriano@unmsm.edu.pe'
-          }
-        ],
-        rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
-        rutasLibros: [
-          {nombreLibro: 'Libro2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          },
-          {nombreLibro: 'Libro2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          }
-        ],
-        rutasArticulos: [
-          {nombreArticulo: 'Articulo1',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          },
-          {nombreArticulo: 'Articulo2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          }
-  
-        ]
+      alumnos: [
+        {
+          nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+          correo: 'carlos.espinoza23@unmsm.edu.pe'
+        }, {
+          nombreAlumno: 'Melani Laveriano Porroa',
+          correo: 'melani.laveriano@unmsm.edu.pe'
+        }
+      ],
+      rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
+      rutasLibros: [
+        {
+          nombreLibro: 'Libro2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        },
+        {
+          nombreLibro: 'Libro2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        }
+      ],
+      rutasArticulos: [
+        {
+          nombreArticulo: 'Articulo1',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        },
+        {
+          nombreArticulo: 'Articulo2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        }
+
+      ]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -839,33 +891,37 @@ export class CoursesServiceService {
             { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
           ]
         }],
-        alumnos:[
-          {
-            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
-            correo: 'carlos.espinoza23@unmsm.edu.pe'
-          },{
-            nombreAlumno: 'Melani Laveriano Porroa',
-            correo: 'melani.laveriano@unmsm.edu.pe'
-          }
-        ],
-        rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
-        rutasLibros: [
-          {nombreLibro: 'Libro2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          },
-          {nombreLibro: 'Libro2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          }
-        ],
-        rutasArticulos: [
-          {nombreArticulo: 'Articulo1',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          },
-          {nombreArticulo: 'Articulo2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          }
-  
-        ]
+      alumnos: [
+        {
+          nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+          correo: 'carlos.espinoza23@unmsm.edu.pe'
+        }, {
+          nombreAlumno: 'Melani Laveriano Porroa',
+          correo: 'melani.laveriano@unmsm.edu.pe'
+        }
+      ],
+      rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
+      rutasLibros: [
+        {
+          nombreLibro: 'Libro2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        },
+        {
+          nombreLibro: 'Libro2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        }
+      ],
+      rutasArticulos: [
+        {
+          nombreArticulo: 'Articulo1',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        },
+        {
+          nombreArticulo: 'Articulo2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        }
+
+      ]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -888,33 +944,37 @@ export class CoursesServiceService {
             { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
           ]
         }],
-        alumnos:[
-          {
-            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
-            correo: 'carlos.espinoza23@unmsm.edu.pe'
-          },{
-            nombreAlumno: 'Melani Laveriano Porroa',
-            correo: 'melani.laveriano@unmsm.edu.pe'
-          }
-        ],
-        rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
-        rutasLibros: [
-          {nombreLibro: 'Libro2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          },
-          {nombreLibro: 'Libro2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          }
-        ],
-        rutasArticulos: [
-          {nombreArticulo: 'Articulo1',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          },
-          {nombreArticulo: 'Articulo2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          }
-  
-        ]
+      alumnos: [
+        {
+          nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+          correo: 'carlos.espinoza23@unmsm.edu.pe'
+        }, {
+          nombreAlumno: 'Melani Laveriano Porroa',
+          correo: 'melani.laveriano@unmsm.edu.pe'
+        }
+      ],
+      rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
+      rutasLibros: [
+        {
+          nombreLibro: 'Libro2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        },
+        {
+          nombreLibro: 'Libro2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        }
+      ],
+      rutasArticulos: [
+        {
+          nombreArticulo: 'Articulo1',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        },
+        {
+          nombreArticulo: 'Articulo2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        }
+
+      ]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -937,33 +997,37 @@ export class CoursesServiceService {
             { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
           ]
         }],
-        alumnos:[
-          {
-            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
-            correo: 'carlos.espinoza23@unmsm.edu.pe'
-          },{
-            nombreAlumno: 'Melani Laveriano Porroa',
-            correo: 'melani.laveriano@unmsm.edu.pe'
-          }
-        ],
-        rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
-        rutasLibros: [
-          {nombreLibro: 'Libro2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          },
-          {nombreLibro: 'Libro2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          }
-        ],
-        rutasArticulos: [
-          {nombreArticulo: 'Articulo1',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          },
-          {nombreArticulo: 'Articulo2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          }
-  
-        ]
+      alumnos: [
+        {
+          nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+          correo: 'carlos.espinoza23@unmsm.edu.pe'
+        }, {
+          nombreAlumno: 'Melani Laveriano Porroa',
+          correo: 'melani.laveriano@unmsm.edu.pe'
+        }
+      ],
+      rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
+      rutasLibros: [
+        {
+          nombreLibro: 'Libro2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        },
+        {
+          nombreLibro: 'Libro2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        }
+      ],
+      rutasArticulos: [
+        {
+          nombreArticulo: 'Articulo1',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        },
+        {
+          nombreArticulo: 'Articulo2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        }
+
+      ]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -986,33 +1050,37 @@ export class CoursesServiceService {
             { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
           ]
         }],
-        alumnos:[
-          {
-            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
-            correo: 'carlos.espinoza23@unmsm.edu.pe'
-          },{
-            nombreAlumno: 'Melani Laveriano Porroa',
-            correo: 'melani.laveriano@unmsm.edu.pe'
-          }
-        ],
-        rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
-        rutasLibros: [
-          {nombreLibro: 'Libro2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          },
-          {nombreLibro: 'Libro2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          }
-        ],
-        rutasArticulos: [
-          {nombreArticulo: 'Articulo1',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          },
-          {nombreArticulo: 'Articulo2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          }
-  
-        ]
+      alumnos: [
+        {
+          nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+          correo: 'carlos.espinoza23@unmsm.edu.pe'
+        }, {
+          nombreAlumno: 'Melani Laveriano Porroa',
+          correo: 'melani.laveriano@unmsm.edu.pe'
+        }
+      ],
+      rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
+      rutasLibros: [
+        {
+          nombreLibro: 'Libro2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        },
+        {
+          nombreLibro: 'Libro2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        }
+      ],
+      rutasArticulos: [
+        {
+          nombreArticulo: 'Articulo1',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        },
+        {
+          nombreArticulo: 'Articulo2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        }
+
+      ]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -1035,33 +1103,37 @@ export class CoursesServiceService {
             { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
           ]
         }],
-        alumnos:[
-          {
-            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
-            correo: 'carlos.espinoza23@unmsm.edu.pe'
-          },{
-            nombreAlumno: 'Melani Laveriano Porroa',
-            correo: 'melani.laveriano@unmsm.edu.pe'
-          }
-        ],
-        rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
-        rutasLibros: [
-          {nombreLibro: 'Libro2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          },
-          {nombreLibro: 'Libro2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          }
-        ],
-        rutasArticulos: [
-          {nombreArticulo: 'Articulo1',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          },
-          {nombreArticulo: 'Articulo2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          }
-  
-        ]
+      alumnos: [
+        {
+          nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+          correo: 'carlos.espinoza23@unmsm.edu.pe'
+        }, {
+          nombreAlumno: 'Melani Laveriano Porroa',
+          correo: 'melani.laveriano@unmsm.edu.pe'
+        }
+      ],
+      rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
+      rutasLibros: [
+        {
+          nombreLibro: 'Libro2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        },
+        {
+          nombreLibro: 'Libro2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        }
+      ],
+      rutasArticulos: [
+        {
+          nombreArticulo: 'Articulo1',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        },
+        {
+          nombreArticulo: 'Articulo2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        }
+
+      ]
     },
     {
       courseName: 'Curso de ciclo 2',
@@ -1096,33 +1168,37 @@ export class CoursesServiceService {
             { title: 'Material 2', description: 'Description 2', url: 'http://example.com' }
           ]
         }],
-        alumnos:[
-          {
-            nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
-            correo: 'carlos.espinoza23@unmsm.edu.pe'
-          },{
-            nombreAlumno: 'Melani Laveriano Porroa',
-            correo: 'melani.laveriano@unmsm.edu.pe'
-          }
-        ],
-        rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
-        rutasLibros: [
-          {nombreLibro: 'Libro2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          },
-          {nombreLibro: 'Libro2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          }
-        ],
-        rutasArticulos: [
-          {nombreArticulo: 'Articulo1',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          },
-          {nombreArticulo: 'Articulo2',
-            ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
-          }
-  
-        ]
+      alumnos: [
+        {
+          nombreAlumno: 'Carlos Daniel Espinoza Ramirez',
+          correo: 'carlos.espinoza23@unmsm.edu.pe'
+        }, {
+          nombreAlumno: 'Melani Laveriano Porroa',
+          correo: 'melani.laveriano@unmsm.edu.pe'
+        }
+      ],
+      rutaSilabo: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all',
+      rutasLibros: [
+        {
+          nombreLibro: 'Libro2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        },
+        {
+          nombreLibro: 'Libro2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        }
+      ],
+      rutasArticulos: [
+        {
+          nombreArticulo: 'Articulo1',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        },
+        {
+          nombreArticulo: 'Articulo2',
+          ruta: 'https://classroom.google.com/w/MzQyMDE0NDYxNTY5/t/all'
+        }
+
+      ]
     }
   ];
 

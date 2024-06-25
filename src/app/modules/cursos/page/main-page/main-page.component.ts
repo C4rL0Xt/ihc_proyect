@@ -12,7 +12,7 @@ export class MainPageComponent implements OnInit {
 
   courses: Course[] = [];
   randomColors: String[] = [];
-  
+
   constructor(private courseService: CoursesServiceService) { }
 
   ngOnInit(): void {

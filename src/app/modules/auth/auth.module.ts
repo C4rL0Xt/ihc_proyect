@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatIcon } from '@angular/material/icon';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -18,7 +19,7 @@ import { MatIcon } from '@angular/material/icon';
   imports: [
     CommonModule,
     AuthRoutingModule,
-
+    RouterModule,
     MatInputModule,
     MatButtonModule,
     MatCardModule,

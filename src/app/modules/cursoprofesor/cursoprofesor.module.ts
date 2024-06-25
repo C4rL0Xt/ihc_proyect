@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ChatRoutingModule } from './chat-routing.module';
-import { ChatPageComponent } from './pages/chat-page/chat-page.component';
+import { CursoprofesorRoutingModule } from './cursoprofesor-routing.module';
+import { ProfesorPageComponent } from './pages/profesor-page/profesor-page.component';
+import { CursosProfesorComponent } from './componentes/cursos-profesor/cursos-profesor.component';
+import { DetalleProfesorComponent } from './componentes/detalle-profesor/detalle-profesor.component';
 
-import { FormsModule } from '@angular/forms';
-import { ChatPanelComponent } from './components/chat-panel/chat-panel.component';
-import { ChatContactComponent } from './components/chat-contact/chat-contact.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -27,20 +26,18 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { ChatService } from './service/chat.service';
-import { EmojiModule } from '@ctrl/ngx-emoji-mart/ngx-emoji';
-import { PickerModule } from '@ctrl/ngx-emoji-mart';
+import { ServicioProfesorService } from './services/servicio-profesor.service';
 
 @NgModule({
   declarations: [
-    ChatPageComponent,
-    ChatPanelComponent,
-    ChatContactComponent,
+    ProfesorPageComponent,
+    CursosProfesorComponent,
+    DetalleProfesorComponent,
+
   ],
   imports: [
     CommonModule,
-    ChatRoutingModule,
-    FormsModule,
+    CursoprofesorRoutingModule,
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
@@ -60,11 +57,8 @@ import { PickerModule } from '@ctrl/ngx-emoji-mart';
     MatTabsModule,
     MatSnackBarModule,
     MatDatepickerModule,
-    MatNativeDateModule,
-    EmojiModule,
-    PickerModule
-
+    MatNativeDateModule
   ],
-  providers: [ChatService]
+  providers: [ServicioProfesorService]
 })
-export class ChatModule { }
+export class CursoprofesorModule { }

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
 .layout {
   display: grid;
   grid-template-areas:
@@ -26,12 +27,13 @@
 
 
 
-.input-search{
+.input-search {
   position: absolute;
   top: 50%;
   left: 50%;
   width: calc(100% - 50px);
-  height: calc(100% - 20px); /* Ajusta esto según el padding del input */
+  height: calc(100% - 20px);
+  /* Ajusta esto según el padding del input */
   max-width: 450px;
   max-height: 40px;
   border-radius: 12px;
@@ -49,9 +51,11 @@
 .icon {
   position: absolute;
   top: 50%;
-  right: 8%; /* Adjust this according to the maximum width of the input */
+  right: 8%;
+  /* Adjust this according to the maximum width of the input */
   transform: translateY(-50%);
-  pointer-events: none; /* Allows clicking through the icon */
+  pointer-events: none;
+  /* Allows clicking through the icon */
 }
 
 /* Media query for smaller screens */
@@ -62,11 +66,12 @@
   }
 
   .icon {
-    right: calc(50% - 5px); /* Adjust this according to the maximum width of the input */
+    right: calc(50% - 5px);
+    /* Adjust this according to the maximum width of the input */
   }
 }
 
-.separator{
+.separator {
   width: 100%;
   height: 1px;
   background-color: rgba(156, 182, 221, 0.5);
@@ -79,7 +84,7 @@
 
 
 
-.list-container{
+.list-container {
   width: 100%;
   height: 100%;
   max-height: calc(100vh - 230px);
@@ -90,24 +95,28 @@
 }
 
 .course-item {
-  height: 100px;
+  height: 80px;
   width: 100%;
   padding-top: 5px;
   display: flex;
   align-items: center;
   padding: 12px;
   transition: background-color 0.3s ease;
-} 
+}
 
 .course-item:hover {
-  background-color: rgba(131, 157, 209 , 0.5);
-    cursor: pointer; /* Cambia el cursor a una mano para indicar que es clickeable */
+  background-color: rgba(131, 157, 209, 0.5);
+  cursor: pointer;
+  /* Cambia el cursor a una mano para indicar que es clickeable */
 }
 
 .avatar {
-  font-size: 2.5rem; /* Tamaño más grande y responsivo */
-  width: 2.5rem; /* Asegura que el ancho sea igual a la altura */
-  height: 2.5rem; /* Asegura que la altura sea igual al ancho */
+  font-size: 2.5rem;
+  /* Tamaño más grande y responsivo */
+  width: 2.5rem;
+  /* Asegura que el ancho sea igual a la altura */
+  height: 2.5rem;
+  /* Asegura que la altura sea igual al ancho */
   margin-right: 1rem;
   color: black;
   display: flex;
@@ -119,7 +128,8 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  min-width: 0; /* Permite que el contenido se encoja si es necesario */
+  min-width: 0;
+  /* Permite que el contenido se encoja si es necesario */
 }
 
 .top-row {
@@ -130,7 +140,8 @@
 }
 
 .course-name {
-  font-size: 1.2rem; /* Tamaño más grande y responsivo */
+  font-size: 1.2rem;
+  /* Tamaño más grande y responsivo */
   font-weight: bold;
   color: #000000;
   font-family: "Raleway", sans-serif;
@@ -149,7 +160,7 @@
 }
 
 .last-message {
-  font-size: 1rem;
+  font-size: 0.7rem;
   color: #777777;
   white-space: nowrap;
   overflow: hidden;
@@ -172,7 +183,8 @@
     height: auto;
   }
 
-  .layout-header, .layout-body {
+  .layout-header,
+  .layout-body {
     padding: 5px;
   }
 }
