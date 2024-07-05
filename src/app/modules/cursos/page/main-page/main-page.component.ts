@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Course, CoursesServiceService } from '../../servicios/courses-service.service';
-
+import { Curso } from 'src/app/core/models/curso.model';
+import { CursoSService } from '../../servicios/cursoService/curso-s.service';
 
 @Component({
   selector: 'app-main-page',
@@ -10,12 +11,31 @@ import { Course, CoursesServiceService } from '../../servicios/courses-service.s
 
 export class MainPageComponent implements OnInit {
 
-  courses: Course[] = [];
+  courses: Curso[] = [];
   randomColors: String[] = [];
 
-  constructor(private courseService: CoursesServiceService) { }
+  constructor(private cursoService: CursoSService) { }
 
   ngOnInit(): void {
-    this.courses = this.courseService.getCourses();
+    this.loadCursos();
   }
+
+  loadCursos(): void {
+    this.cursoService.getCursosAll().subscribe((response:Curso[]) =>{
+      this.courses = response;
+      this.courses.forEach((curso) => this.assignRandomColors(curso));
+        
+    })
+}
+
+randomColor(): string {
+  const hue = Math.floor(Math.random() * 360); // Tonos de 0 a 360 grados
+  const saturation = Math.floor(Math.random() * 50) + 50; // Saturación entre 50% y 100%
+  const lightness = Math.floor(Math.random() * 20) + 60; // Luminosidad entre 50% y 70%
+  return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+}
+
+assignRandomColors(curso: Curso): void {
+  curso.color = this.randomColor();
+}
 }

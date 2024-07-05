@@ -3,9 +3,16 @@
     <mat-label>Ciclo</mat-label>
     <mat-select [(ngModel)]="selectedCycle">
       <mat-option value="">Todos los ciclos</mat-option>
-      <mat-option value="ciclo1">Ciclo 1</mat-option>
-      <mat-option value="ciclo2">Ciclo 2</mat-option>
-      <mat-option value="ciclo3">Ciclo 3</mat-option>
+      <mat-option value="CICLO I">CICLO I</mat-option>
+      <mat-option value="CICLO II">CICLO II</mat-option>
+      <mat-option value="CICLO III">CICLO III</mat-option>
+      <mat-option value="CICLO IV">CICLO IV</mat-option>
+      <mat-option value="CICLO V">CICLO V</mat-option>
+      <mat-option value="CICLO VI">CICLO VI</mat-option>
+      <mat-option value="CICLO VII">CICLO VII</mat-option>
+      <mat-option value="CICLO VIII">CICLO VIII</mat-option>
+      <mat-option value="CICLO IX">CICLO IX</mat-option>
+      <mat-option value="CICLO X">CICLO X</mat-option>
     </mat-select>
   </mat-form-field>
 
@@ -20,23 +27,23 @@
 
 <div class="card-container">
   <mat-card *ngFor="let course of filteredCourses()" class="example-card" appearance="outlined">
-    <mat-card-header [ngStyle]="{'background-color': course.color}" class="container-title">
+    <mat-card-header  class="container-title" [ngStyle]="{'background-color': course.color}">
       <mat-card-title-group>
-        <mat-card-title class="lav">{{ course.courseName }}</mat-card-title>
-        <mat-card-subtitle>{{ course.teacherName }}</mat-card-subtitle>
+        <mat-card-title class="lav">{{ course.nombre_curso }}</mat-card-title>
+        <mat-card-subtitle>{{ course.nombre_profesor }}</mat-card-subtitle>
         <div class="image-borde">
-          <img mat-card-md-image src={{course.teacherPhoto}}>
-        </div>
+          <img mat-card-md-image [src]="course.foto" style="max-width: 150px;">
+      </div>
         <h6></h6>
       </mat-card-title-group>
     </mat-card-header>
     <mat-card-content class="cred">
       <p></p>
-      <p>Creditos: {{ course.credits }}</p>
+      <p>Creditos: {{ course.creditos }}</p>
       <p>{{course.horario}}</p>
     </mat-card-content>
     <mat-card-actions class="actions-right">
-      <button mat-button class="custom-button" [routerLink]="['/home/cursos/detalles', course.courseName]">Ir</button>
+      <button mat-button class="custom-button" [routerLink]="['/home/cursos/detalles', course.nombre_curso]">Ir</button>
 
     </mat-card-actions>
   </mat-card>
