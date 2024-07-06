@@ -28,7 +28,7 @@ export class CursosPageComponent implements OnInit {
 
   constructor(
     private cursoService: CursoSService,
-    private router:Router,
+    private router: Router,
     private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
@@ -36,20 +36,20 @@ export class CursosPageComponent implements OnInit {
 
   }
 
-  loadCursos(): void{
-    this.cursoService.getCursosAll().subscribe((response:Curso[]) => {       
-        this.courses = response;
-        this.courses.forEach((curso) => this.getFotoProfesor(curso));
-        this.courses.forEach((curso) => this.assignRandomColors(curso));
-        
-        console.log("Cursos cargados",response);
+  loadCursos(): void {
+    this.cursoService.getCursosAll().subscribe((response: Curso[]) => {
+      this.courses = response;
+      this.courses.forEach((curso) => this.getFotoProfesor(curso));
+      this.courses.forEach((curso) => this.assignRandomColors(curso));
+
+      console.log("Cursos cargados", response);
     })
   }
 
   filteredCourses(): Curso[] {
     return this.courses.filter(course =>
       (course.ciclo === this.selectedCycle || this.selectedCycle === '') &&
-      course.nombre_curso.toLowerCase().includes(this.searchQuery.toLowerCase())
+      course.nombrecurso.toLowerCase().includes(this.searchQuery.toLowerCase())
     );
   }
 
@@ -57,16 +57,16 @@ export class CursosPageComponent implements OnInit {
     this.router.navigate(['/home/cursos/detalles'], { state: { course } });
   }
 
-  getFotoProfesor(profesor:Curso ): void {
+  getFotoProfesor(profesor: Curso): void {
     this.cursoService.getFotoProfesor(profesor.profesorid).subscribe(
       (blob: Blob) => {
         const objectURL = URL.createObjectURL(blob);
         profesor.foto = this.sanitizer.bypassSecurityTrustUrl(objectURL);
-         console.log('Foto del profesor obtenida:', this.fotoUrl);
-    },error => {
-      console.error('Error al obtener la foto del profesor:', error);
-    }
-  );
+        console.log('Foto del profesor obtenida:', this.fotoUrl);
+      }, error => {
+        console.error('Error al obtener la foto del profesor:', error);
+      }
+    );
   }
 
   randomColor(): string {

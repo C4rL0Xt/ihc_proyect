@@ -27,13 +27,13 @@
 
 <div class="card-container">
   <mat-card *ngFor="let course of filteredCourses()" class="example-card" appearance="outlined">
-    <mat-card-header  class="container-title" [ngStyle]="{'background-color': course.color}">
+    <mat-card-header class="container-title" [ngStyle]="{'background-color': course.color}">
       <mat-card-title-group>
-        <mat-card-title class="lav">{{ course.nombre_curso }}</mat-card-title>
+        <mat-card-title class="lav">{{ course.nombrecurso }}</mat-card-title>
         <mat-card-subtitle>{{ course.nombre_profesor }}</mat-card-subtitle>
         <div class="image-borde">
           <img mat-card-md-image [src]="course.foto" style="max-width: 150px;">
-      </div>
+        </div>
         <h6></h6>
       </mat-card-title-group>
     </mat-card-header>
@@ -43,7 +43,7 @@
       <p>{{course.horario}}</p>
     </mat-card-content>
     <mat-card-actions class="actions-right">
-      <button mat-button class="custom-button" [routerLink]="['/home/cursos/detalles', course.nombre_curso]">Ir</button>
+      <button mat-button class="custom-button" [routerLink]="['/home/cursos/detalles', course.nombrecurso]">Ir</button>
 
     </mat-card-actions>
   </mat-card>
