@@ -20,13 +20,13 @@
           <h3><strong>Tareas</strong></h3>
           <ul>
             <li *ngFor="let task of week.tareas">
-              Tarea: {{ task.descripcion}} (Due: {{ task}})
+              Tarea: {{ task.descripcion}}
             </li>
           </ul>
-          <h3>Materiales</h3>
+          <h3><strong>Materiales</strong></h3>
           <ul>
             <li *ngFor="let material of week.materiales">
-              <a [href]="material.url" target="_blank">{{ material.tipo }}</a>: {{ material.descripcion}}
+              {{ material.descripcion}} <a [href]="material.url" target="_blank">{{ material.tipo }}</a>
             </li>
           </ul>
         </div>
