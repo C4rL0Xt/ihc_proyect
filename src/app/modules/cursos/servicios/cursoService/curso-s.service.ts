@@ -18,6 +18,21 @@ export class CursoSService {
     return this.httpClient.get(`${this.URL}/curso/${id}/foto`,{responseType: 'blob'});
   }
 
+  getMateriales(): Observable<any[]> {
+    return this.httpClient.get(`${this.URL}/curso/listaMaterialesE`).pipe(
+      map((response: any) => {
+        console.log("Respuesta completa de la API: ", response);
+        return response;
+      }),
+      catchError((err) => {
+        alert('Error de conexion');
+        const { status, statusText } = err;
+        console.log('Algo paso revisar', [status, statusText]);
+        return of([]);
+      })
+    )
+  }
+
   getCursosAll(): Observable<any[]> {
     return this.httpClient.get(`${this.URL}/curso/listar/dto`).pipe(
       map((response: any) => {

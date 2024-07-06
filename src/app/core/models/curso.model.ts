@@ -9,5 +9,6 @@ export interface Curso {
     creditos: number;
     horario: String;
     color?: String;
+    id_curso: String;
   }
   

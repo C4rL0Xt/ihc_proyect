@@ -8,7 +8,7 @@
           <div class="course-icon" [ngStyle]="{'background-color': course.color}">
             {{ course.nombre_curso.charAt(0) }}
           </div>
-          <a mat-list-item [routerLink]="['/home/cursos/detalles', course.nombre_curso]" routerLinkActive="active">
+          <a mat-list-item [routerLink]="['/home/cursos/detalles', course.id_curso]" routerLinkActive="active">
             <div class="course-details">
               <span class="course-name">{{ course.nombre_curso}}</span>
               <span class="horario">{{ course.horario }}</span>
