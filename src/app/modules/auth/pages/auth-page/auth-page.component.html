@@ -7,7 +7,7 @@
         <div class="icon">
           <i class="fas fa-envelope"></i>
         </div>
-        <input formControlName="email" type="email" placeholder="Ingresa tu correo" required>
+        <input formControlName="correo" type="email" placeholder="Ingresa tu correo" required>
       </div>
       <div class="input-container">
         <div class="icon">
@@ -20,11 +20,10 @@
             [ngClass]="{'fa-eye-slash': passwordFieldType === 'password', 'fa-eye': passwordFieldType === 'text'}"></i>
         </div>
         <div *ngIf="errorSession">
-          Ocurrio un error en el email o password
+          Ocurrió un error en el email o password
         </div>
       </div>
-
+      <button type="submit">Login</button>
     </form>
-    <button (click)="irAHome()">Login</button>
   </div>
 </div>

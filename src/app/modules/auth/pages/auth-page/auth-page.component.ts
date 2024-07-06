@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { trigger, style, transition, animate } from '@angular/animations';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-auth-page',
@@ -17,6 +18,9 @@ import { Router } from '@angular/router';
   ]
 })
 export class AuthPageComponent implements OnInit {
+
+  errorSesion: boolean = false;
+
   data = {
     email: 'carlos.espinoza@unmsm.edu.pe',
     password: '12345'
@@ -25,28 +29,40 @@ export class AuthPageComponent implements OnInit {
   formLogin: FormGroup = new FormGroup({});
 
 
+
   passwordFieldType: string = 'password';
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+    private formBuilder: FormBuilder,
+    private authService: AuthService
+  ) { }
 
   ngOnInit(): void {
-    this.formLogin = new FormGroup({
-      email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [
-        Validators.required,
-        Validators.minLength(6),
-        Validators.maxLength(12),
-      ]),
+    this.formLogin = this.formBuilder.group({
+      correo: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(5)]]
     });
   }
 
   login(): void {
-    const { email, password } = this.formLogin.value;
-    if (email === this.data.email && password === this.data.password) {
-      this.router.navigate(['/home']);
-    } else {
-      this.errorSession = true;
+    if (this.formLogin.invalid) {
+      return;
     }
+
+    const { correo, password } = this.formLogin.value;
+    console.log(correo, password)
+    this.authService.login(correo, password).subscribe(
+      (response: any) => {
+        console.log(response);
+        console.log('token: ', response.token);
+        localStorage.setItem('token', response.token);
+        this.router.navigate(['/home']);
+      },
+      (error) => {
+        console.error('Error de login', error);
+        this.errorSession = true;
+      }
+    );
   }
 
 
@@ -54,7 +70,5 @@ export class AuthPageComponent implements OnInit {
     this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password';
   }
 
-  irAHome(): void {
-    this.router.navigate(['/home']);
-  }
+
 }
