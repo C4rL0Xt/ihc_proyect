@@ -10,7 +10,7 @@ const routes: Routes = [
     component: CursosPageComponent
   },
   {
-    path: 'detalles/:idCurso',
+    path: 'detalles/:idCurso/:nombreCurso',
     component: DetalleCursoComponent
 
   }, {

@@ -49,7 +49,7 @@ export class CursosPageComponent implements OnInit {
   filteredCourses(): Curso[] {
     return this.courses.filter(course =>
       (course.ciclo === this.selectedCycle || this.selectedCycle === '') &&
-      course.nombrecurso.toLowerCase().includes(this.searchQuery.toLowerCase())
+      course.nombre_curso.toLowerCase().includes(this.searchQuery.toLowerCase())
     );
   }
 

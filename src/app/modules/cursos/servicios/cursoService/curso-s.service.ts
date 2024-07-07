@@ -50,7 +50,7 @@ export class CursoSService {
 
   getSemanasCurso(curso: Curso): Observable<any> {
     console.log('Entraindnig Curso:', curso);
-    return this.httpClient.get(`${this.URL}/curso/semanas/${curso.nombrecurso}`).pipe(
+    return this.httpClient.get(`${this.URL}/curso/semanas/${curso.nombre_curso}`).pipe(
       map((response: any) => {
         console.log("Respuesta completa de la API - semanas: ", response);
         return response;
