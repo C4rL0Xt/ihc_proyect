@@ -1,5 +1,6 @@
 <mat-tab-group animationDuration="0ms" class="selector-style">
   <mat-tab label="Semanas">
+<<<<<<< HEAD
     <h1 class="encabezado">{{course?.nombrecurso}}</h1>
 
     <mat-accordion class="acordeon-style" *ngIf="semanas">
@@ -48,13 +49,23 @@
         </button>
       </!--div-->
     </div>
+=======
   </mat-tab>
+
+  <mat-tab label="Personas">
+>>>>>>> 9245e50cff5d21c1936a7e02a098a11c98b26d19
+  </mat-tab>
+
 
   <mat-tab label="Recursos">
     <h1 class="encabezado">Recursos adicionales para el curso</h1>
 
+<<<<<<< HEAD
     <!--mat-accordion class="acordeon-style" *ngIf="course?.weeks">
 
+=======
+    <mat-accordion class="acordeon-style">
+>>>>>>> 9245e50cff5d21c1936a7e02a098a11c98b26d19
       <mat-expansion-panel hideToggle class="acordeon-style">
         <mat-expansion-panel-header class="tam">
           <mat-panel-title>
@@ -63,12 +74,14 @@
           <mat-panel-description>
           </mat-panel-description>
         </mat-expansion-panel-header>
-        <div>
-          Silabo: <a [href]="course?.rutaSilabo" target="_blank">{{ course?.rutaSilabo }}</a>
+        <div *ngFor="let material of materialesOfCourse">
+          <div *ngIf="material.tipo === 'Silabo'">
+            {{material.descripcion}}: <a [href]="material.ruta" target="_blank">{{material.ruta}}</a>
+          </div>
         </div>
       </mat-expansion-panel>
 
-      <mat-expansion-panel hideToggle class="acordeon-style">
+      <mat-expansion-panel hideToggle class="acordeon-style" >
         <mat-expansion-panel-header class="tam">
           <mat-panel-title>
             Libros
@@ -76,9 +89,11 @@
           <mat-panel-description>
           </mat-panel-description>
         </mat-expansion-panel-header>
-        <div *ngFor="let libro of course?.rutasLibros">
-          {{ libro.nombreLibro }}: <a [href]="libro.ruta" target="_blank">{{ libro.ruta }}</a>
-        </div>
+        <div *ngFor="let material of materialesOfCourse">
+          <div *ngIf="material.tipo === 'Libro'">
+            {{material.descripcion}}: <a [href]="material.ruta" target="_blank">{{material.ruta}}</a>
+          </div>
+        </div>   
       </mat-expansion-panel>
 
       <mat-expansion-panel hideToggle class="acordeon-style">
@@ -89,12 +104,25 @@
           <mat-panel-description>
           </mat-panel-description>
         </mat-expansion-panel-header>
-        <div *ngFor="let articulo of course?.rutasArticulos">
-          {{ articulo.nombreArticulo }}: <a [href]="articulo.ruta" target="_blank">{{ articulo.ruta }}</a>
+        <div *ngFor="let material of materialesOfCourse">
+          <div *ngIf="material.tipo === 'Articulo'">
+            {{material.descripcion}}: <a [href]="material.ruta" target="_blank">{{material.ruta}}</a>
+          </div>
         </div>
       </mat-expansion-panel>
 
+<<<<<<< HEAD
     </!--mat-accordion-->
+=======
+
+
+
+
+
+
+
+    </mat-accordion>
+>>>>>>> 9245e50cff5d21c1936a7e02a098a11c98b26d19
 
 
 

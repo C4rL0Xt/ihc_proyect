@@ -3,7 +3,11 @@ import { ActivatedRoute } from '@angular/router';
 import { CoursesServiceService, Course } from '../../servicios/courses-service.service';
 import { CursoSService } from '../../servicios/cursoService/curso-s.service';
 import { Curso } from 'src/app/core/models/curso.model';
+<<<<<<< HEAD
 import { Semana } from 'src/app/core/models/semanas.model';
+=======
+import { MaterialE } from 'src/app/core/models/materialExtra.model';
+>>>>>>> 9245e50cff5d21c1936a7e02a098a11c98b26d19
 
 export interface Tile {
   color: string;
@@ -19,6 +23,7 @@ export interface Tile {
 })
 export class DetalleCursoComponent implements OnInit {
 
+<<<<<<< HEAD
   course: Curso | undefined;
 
   panelOpenState = false;
@@ -53,6 +58,36 @@ export class DetalleCursoComponent implements OnInit {
 
 
 
+=======
+  material: MaterialE | undefined;
+  courses: Curso[] = [];
+  materialesE: MaterialE[] = [];
+  materialesOfCourse: MaterialE[] = [];
+  panelOpenState = false;
+
+  constructor(private route: ActivatedRoute, private cursoService: CursoSService) { }
+
+  ngOnInit(): void {
+    this.loadMaterialesPorCurso();
+  }
+
+  loadMaterialesPorCurso():void {
+    this.route.paramMap.subscribe(params => {
+      const idCurso = params.get('idCurso');
+      if (idCurso) {
+        this.loadMateriales(idCurso);
+      }
+    });
+  }
+
+  loadMateriales(idCurso: string): void {
+    this.cursoService.getMateriales().subscribe((response: MaterialE[]) => {
+      this.materialesE = response;
+      this.materialesOfCourse = this.materialesE.filter(material => material.cursoid === idCurso);
+      console.log("Materiales extra cargados", this.materialesOfCourse);
+    });
+  }
+>>>>>>> 9245e50cff5d21c1936a7e02a098a11c98b26d19
 
   sendMessage(email: string) {
     const subject = 'Asunto del correo';
@@ -69,10 +104,5 @@ export class DetalleCursoComponent implements OnInit {
     { text: 'Three', cols: 1, rows: 1, color: 'lightpink' },
     { text: 'Four', cols: 2, rows: 1, color: '#DDBDF1' },
   ];
-
-
-
-
-
 
 }
