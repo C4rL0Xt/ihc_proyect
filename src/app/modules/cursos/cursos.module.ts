@@ -29,12 +29,18 @@ import { DetalleCursoComponent } from './componentes/detalle-curso/detalle-curso
 import { MainPageComponent } from './page/main-page/main-page.component';
 import { CoursesServiceService } from './servicios/courses-service.service';
 import { BibliotecaComponent } from './componentes/biblioteca/biblioteca.component';
+import { DetalleCursoProfesorComponent } from './componentes/detalle-curso-profesor/detalle-curso-profesor.component';
+import { CrearSemanaComponent } from './componentes/crear-semana/crear-semana.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     CursosPageComponent,
     DetalleCursoComponent,
     MainPageComponent,
     BibliotecaComponent,
+    DetalleCursoProfesorComponent,
+    CrearSemanaComponent,
 
   ],
   imports: [
@@ -62,7 +68,8 @@ import { BibliotecaComponent } from './componentes/biblioteca/biblioteca.compone
     MatSnackBarModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [CoursesServiceService]
 })

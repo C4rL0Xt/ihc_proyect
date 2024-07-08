@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { Curso } from 'src/app/core/models/curso.model';
 import { environment } from '../../../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable, catchError, map, of, tap } from 'rxjs';
+import { BehaviorSubject, Observable, ObservedValueOf, catchError, map, of, tap } from 'rxjs';
+import { Semana } from 'src/app/core/models/semanas.model';
 
 
 @Injectable({
@@ -76,6 +77,20 @@ export class CursoSService {
         return of(null);
       })
     )
+  }
+
+  createSemana(semana: Semana): Observable<any>{
+    return this.httpClient.post(`${this.URL}/curso/guardar-semana`, semana);
+  }
+
+getLastCodeSemana$(): Observable<number> {
+    return this.httpClient.get<number>(`${this.URL}/curso/lastCodeSem`).pipe(
+      catchError(err => {
+        console.error('Error al obtener el último código de semana:', err);
+        alert('Error de conexión');
+        return of(-1); // Devuelve un valor por defecto en caso de error
+      })
+    );
   }
 
 }

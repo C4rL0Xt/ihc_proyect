@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { DetalleCursoComponent } from './componentes/detalle-curso/detalle-curso.component';
 import { CursosPageComponent } from './page/cursos-page/cursos-page.component';
 import { BibliotecaComponent } from './componentes/biblioteca/biblioteca.component';
+import { DetalleCursoProfesorComponent } from './componentes/detalle-curso-profesor/detalle-curso-profesor.component';
+import { CrearSemanaComponent } from './componentes/crear-semana/crear-semana.component';
 
 const routes: Routes = [
   {
@@ -11,7 +13,7 @@ const routes: Routes = [
   },
   {
     path: 'detalles/:idCurso/:nombreCurso',
-    component: DetalleCursoComponent
+    component: DetalleCursoProfesorComponent
 
   }, {
     path: '',
@@ -20,6 +22,10 @@ const routes: Routes = [
   },{
     path: 'biblioteca',
     component: BibliotecaComponent
+  },{
+    path: 'crearsemana',
+    component: CrearSemanaComponent
+
   }
 
 ];
