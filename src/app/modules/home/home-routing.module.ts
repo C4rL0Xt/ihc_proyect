@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardPageComponent } from '../dashboard/pages/dashboard-page/dashboard-page.component';
@@ -5,7 +6,7 @@ import { InicioPageComponent } from './pages/inicio-page/inicio-page/inicio-page
 import { MainPageComponent } from '../cursos/page/main-page/main-page.component';
 import { ChatPageComponent } from '../chat/pages/chat-page/chat-page.component';
 import { CalendarPageComponent } from '../calendar/page/calendar-page/calendar-page.component';
-import { ProfesorPageComponent } from '../cursoprofesor/pages/profesor-page/profesor-page.component';
+import { MainPagepComponent } from '../cursoprofesor/page/main-pagep/main-pagep.component';
 
 const routes: Routes = [
   {
@@ -29,7 +30,8 @@ const routes: Routes = [
     component: InicioPageComponent
   }, {
     path: 'cursoprofesor',
-    component: ProfesorPageComponent,
+    component: MainPagepComponent,
+    loadChildren: () => import('../cursoprofesor/cursoprofesor.module').then(m => m.CursoprofesorModule)
 
   }
 ];

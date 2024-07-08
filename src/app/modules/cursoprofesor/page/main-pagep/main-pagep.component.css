@@ -1,0 +1,54 @@
+.sidenav-container {
+    height: 100%;
+    margin-left: 1%;
+}
+
+mat-sidenav {
+    width: 270px;
+    overflow-y: auto;
+}
+
+.mat-nav-list {
+    overflow-y: auto;
+}
+
+.course-item {
+    display: flex;
+    align-items: center;
+    /* Centra verticalmente los elementos */
+    margin-bottom: 2px;
+    /* Ajusta el espacio entre cada curso */
+}
+
+.course-icon {
+    width: 36px;
+    height: 32px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: white;
+}
+
+.course-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.course-name {
+    font-size: 13px;
+    /* Tamaño de la fuente de los nombres de curso y profesor */
+    color: black;
+    font-weight: 400;
+
+}
+
+.horario {
+    font-size: 13px;
+    /* Tamaño de la fuente de los nombres de curso y profesor */
+    margin-top: -5px;
+    /* Ajusta el espacio opcional encima de cada nombre */
+    color: #666;
+    /* Color opcional del nombre del profesor */
+}

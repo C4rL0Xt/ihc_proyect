@@ -1,11 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 import { CursoprofesorRoutingModule } from './cursoprofesor-routing.module';
-import { ProfesorPageComponent } from './pages/profesor-page/profesor-page.component';
-import { CursosProfesorComponent } from './componentes/cursos-profesor/cursos-profesor.component';
-import { DetalleProfesorComponent } from './componentes/detalle-profesor/detalle-profesor.component';
-
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -27,16 +24,28 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ServicioProfesorService } from './services/servicio-profesor.service';
+import { CrearSemanaComponent } from './componentes/crear-semana/crear-semana.component';
+import { BibliotecapComponent } from './componentes/bibliotecap/bibliotecap.component';
+import { CursoPagepComponent } from './page/curso-pagep/curso-pagep.component';
+import { MainPagepComponent } from './page/main-pagep/main-pagep.component';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { DetalleProfesorComponent } from './componentes/detalle-profesor/detalle-profesor.component';
+
 
 @NgModule({
   declarations: [
-    ProfesorPageComponent,
-    CursosProfesorComponent,
     DetalleProfesorComponent,
+    CrearSemanaComponent,
+    BibliotecapComponent,
+    CursoPagepComponent,
+    MainPagepComponent,
 
   ],
   imports: [
     CommonModule,
+    RouterModule,
+    FormsModule,
     CursoprofesorRoutingModule,
     MatToolbarModule,
     MatButtonModule,
@@ -57,7 +66,9 @@ import { ServicioProfesorService } from './services/servicio-profesor.service';
     MatTabsModule,
     MatSnackBarModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [ServicioProfesorService]
 })

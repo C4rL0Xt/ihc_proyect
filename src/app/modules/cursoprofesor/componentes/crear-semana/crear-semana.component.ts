@@ -1,5 +1,5 @@
 import { DialogRef } from '@angular/cdk/dialog';
-import { CursoSService } from './../../servicios/cursoService/curso-s.service';
+import { ServicioProfesorService } from '../../services/servicio-profesor.service';
 import { Component, Inject,OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef,MAT_DIALOG_DATA} from '@angular/material/dialog';
@@ -20,7 +20,7 @@ export class CrearSemanaComponent implements OnInit {
   constructor(
     private fb: FormBuilder, 
     private dialogRef: DialogRef,
-    private CursoSService:CursoSService, 
+    private profesorService:ServicioProfesorService, 
     private snackBar: MatSnackBar,
     @Inject(MAT_DIALOG_DATA) public data: { cursoId: string }
   ) {
@@ -50,7 +50,7 @@ export class CrearSemanaComponent implements OnInit {
   }
 
   loadLastCodigoSemana(): void {
-    this.CursoSService.getLastCodeSemana$().subscribe(code => {
+    this.profesorService.getLastCodeSemana$().subscribe(code => {
       this.lastCode = code + 1; // Incrementa el código obtenido para usarlo como nuevo código
     }, error => {
       console.error('Error al obtener el último código de semana', error);
@@ -109,7 +109,7 @@ export class CrearSemanaComponent implements OnInit {
 
       console.log("Llego hasta aqui");
 
-      this.CursoSService.createSemana(semanaDTO).subscribe((response) => {
+      this.profesorService.createSemana(semanaDTO).subscribe((response) => {
         console.log('Semana Saved exitosamente:', response);
         
         this.semanaForm.reset();
@@ -133,6 +133,5 @@ export class CrearSemanaComponent implements OnInit {
   cancelarMaterial(index: number): void {
     this.materiales.splice(index, 1); // Elimina la tarea del arreglo
   }
-
 
 }

@@ -1,21 +1,30 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CursosProfesorComponent } from './componentes/cursos-profesor/cursos-profesor.component';
+import { CursoPagepComponent } from './page/curso-pagep/curso-pagep.component';
 import { DetalleProfesorComponent } from './componentes/detalle-profesor/detalle-profesor.component';
+import { BibliotecapComponent } from './componentes/bibliotecap/bibliotecap.component';
+import { CrearSemanaComponent } from './componentes/crear-semana/crear-semana.component';
 
 const routes: Routes = [
   {
     path: 'all',
-    component: CursosProfesorComponent
+    component: CursoPagepComponent
   },
   {
-    path: 'detalles/:nombreCurso',
+    path: 'detalles/:idCurso/:nombreCurso',
     component: DetalleProfesorComponent
 
   }, {
     path: '',
     redirectTo: 'all',
     pathMatch: 'full'
+  },{
+    path: 'biblioteca',
+    component: BibliotecapComponent
+  },{
+    path: 'crearsemana',
+    component: CrearSemanaComponent
+
   }
 ];
 
