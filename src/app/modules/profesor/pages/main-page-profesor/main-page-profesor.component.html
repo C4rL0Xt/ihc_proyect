@@ -1,14 +1,16 @@
+<app-header></app-header>
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav mode="side" opened>
     <mat-nav-list>
-      <a mat-list-item routerLink="/home/cursoprofesor/all" routerLinkActive="active">Todos los Cursos</a>
-      <a mat-list-item routerLink="/home/cursoprofesor/biblioteca" routerLinkActive="active">Biblioteca</a>
+      <a mat-list-item routerLink="/prof/all" routerLinkActive="active">Todos los Cursos</a>
+      <a mat-list-item routerLink="/prof/biblioteca" routerLinkActive="active">Biblioteca</a>
       <ng-container *ngFor="let course of courses">
         <div class="course-item">
           <div class="course-icon" [ngStyle]="{'background-color': course.color}">
             {{ course.nombre_curso.charAt(0) }}
           </div>
-          <a mat-list-item [routerLink]="['/home/cursoprofesor/detalles', course.id_curso,course.nombre_curso]" routerLinkActive="active">
+          <a mat-list-item [routerLink]="['/prof/detalles', course.id_curso,course.nombre_curso]"
+            routerLinkActive="active">
             <div class="course-details">
               <span class="course-name">{{ course.nombre_curso}}</span>
               <span class="horario">{{ course.horario }}</span>

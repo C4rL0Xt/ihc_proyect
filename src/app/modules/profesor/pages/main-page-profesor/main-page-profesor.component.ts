@@ -1,32 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import { Course, CoursesServiceService } from '../../servicios/courses-service.service';
 import { Curso } from 'src/app/core/models/curso.model';
-import { CursoSService } from '../../servicios/cursoService/curso-s.service';
+import { ProfesorService } from '../../services/profesor.service';
 
 @Component({
-  selector: 'app-main-page',
-  templateUrl: './main-page.component.html',
-  styleUrl: './main-page.component.css'
+  selector: 'app-main-page-profesor',
+  templateUrl: './main-page-profesor.component.html',
+  styleUrl: './main-page-profesor.component.css'
 })
-
-export class MainPageComponent implements OnInit {
+export class MainPageProfesorComponent implements OnInit {
 
   courses: Curso[] = [];
   randomColors: String[] = [];
 
-  constructor(private cursoService: CursoSService) { }
+  constructor(
+    private profesorService: ProfesorService
+  ) { }
 
   ngOnInit(): void {
     this.loadCursos();
   }
 
   loadCursos(): void {
-    /*this.cursoService.getCursosAll().subscribe((response: Curso[]) => {
-      this.courses = response;
-      this.courses.forEach((curso) => this.assignRandomColors(curso));
-
-    })*/
-    this.cursoService.getMyCourses().subscribe((response: Curso[]) => {
+    this.profesorService.getMyCourse().subscribe((response: Curso[]) => {
       this.courses = response;
       this.courses.forEach((curso) => this.assignRandomColors(curso));
     });
@@ -42,4 +37,5 @@ export class MainPageComponent implements OnInit {
   assignRandomColors(curso: Curso): void {
     curso.color = this.randomColor();
   }
+
 }

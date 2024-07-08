@@ -1,0 +1,87 @@
+.mat-expansion-panel-header::after {
+
+  color: rgb(201, 201, 201);
+  position: absolute;
+  top: 50%;
+  right: 18px;
+  /* Adjust as needed */
+  transform: translateY(-50%);
+  transition: transform 0.3s ease;
+  /* Optional: smooth transition */
+}
+
+
+
+.selector-style {
+  padding-top: 10px;
+}
+
+.acordeon-style {
+  margin-left: 20%;
+  margin-right: 20%;
+  max-height: 200vh;
+  overflow-y: hidden;
+}
+
+.tam {
+  height: 75px;
+  font-size: 16px;
+}
+
+
+.encabezado {
+  margin-top: 2%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.agregarSem {
+  margin-top: 4%;
+  font-size: 16px;
+  margin-left: 19%;
+  margin-right: 20%;
+}
+
+.user-list {
+  list-style: none;
+  /*padding: 100px;*/
+  padding-top: 2%;
+  padding-left: 20%;
+  padding-right: 20%;
+  margin: 0;
+}
+
+.user-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-name {
+  font-size: 16px;
+  margin-left: 20px;
+}
+
+button.mat-icon-button {
+  padding: 0;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.custom-icon {
+  margin-right: 5px;
+  /* Espacio entre el icono y el texto */
+  vertical-align: middle;
+  /* Alineación vertical media */
+  font-size: 20px;
+  /* Tamaño del icono */
+}

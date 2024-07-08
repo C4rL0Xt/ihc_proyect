@@ -13,6 +13,7 @@ export class CursoSService {
 
   private readonly URL = environment.api_AulaVirtual;
 
+
   constructor(private httpClient: HttpClient) { }
 
   getFotoProfesor(id: number): Observable<any> {
@@ -38,6 +39,21 @@ export class CursoSService {
     return this.httpClient.get(`${this.URL}/curso/listar/dto`).pipe(
       map((response: any) => {
         console.log("Respuesta completa de la API todos cursos: ", response);
+        return response;
+      }),
+      catchError((err) => {
+        alert('Error de conexion');
+        const { status, statusText } = err;
+        console.log('Algo paso revisar', [status, statusText]);
+        return of([]);
+      })
+    )
+  }
+
+  getMyCourses(): Observable<any[]> {
+    return this.httpClient.get(`${this.URL}/curso/${localStorage.getItem('email')}/cursos`).pipe(
+      map((response: any) => {
+        console.log("Respuesta completa de la API mis cursos para un estudiante: ", response);
         return response;
       }),
       catchError((err) => {
@@ -79,11 +95,11 @@ export class CursoSService {
     )
   }
 
-  createSemana(semana: Semana): Observable<any>{
+  createSemana(semana: Semana): Observable<any> {
     return this.httpClient.post(`${this.URL}/curso/guardar-semana`, semana);
   }
 
-getLastCodeSemana$(): Observable<number> {
+  getLastCodeSemana$(): Observable<number> {
     return this.httpClient.get<number>(`${this.URL}/curso/lastCodeSem`).pipe(
       catchError(err => {
         console.error('Error al obtener el último código de semana:', err);

@@ -1,8 +1,8 @@
 import { DialogRef } from '@angular/cdk/dialog';
 import { CursoSService } from './../../servicios/cursoService/curso-s.service';
-import { Component, Inject,OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatDialogRef,MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
@@ -18,9 +18,9 @@ export class CrearSemanaComponent implements OnInit {
 
 
   constructor(
-    private fb: FormBuilder, 
+    private fb: FormBuilder,
     private dialogRef: DialogRef,
-    private CursoSService:CursoSService, 
+    private CursoSService: CursoSService,
     private snackBar: MatSnackBar,
     @Inject(MAT_DIALOG_DATA) public data: { cursoId: string }
   ) {
@@ -31,7 +31,7 @@ export class CrearSemanaComponent implements OnInit {
       numerosemana: ['', Validators.required],
       descripcion: ['', Validators.required]
     });
-    
+
   }
 
   ngOnInit(): void {
@@ -111,7 +111,7 @@ export class CrearSemanaComponent implements OnInit {
 
       this.CursoSService.createSemana(semanaDTO).subscribe((response) => {
         console.log('Semana Saved exitosamente:', response);
-        
+
         this.semanaForm.reset();
         this.tareas = [];
         this.materiales = [];

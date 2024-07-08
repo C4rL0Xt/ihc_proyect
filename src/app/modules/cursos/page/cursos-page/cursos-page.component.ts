@@ -37,13 +37,10 @@ export class CursosPageComponent implements OnInit {
   }
 
   loadCursos(): void {
-    this.cursoService.getCursosAll().subscribe((response: Curso[]) => {
+    this.cursoService.getMyCourses().subscribe((response: Curso[]) => {
       this.courses = response;
-      this.courses.forEach((curso) => this.getFotoProfesor(curso));
       this.courses.forEach((curso) => this.assignRandomColors(curso));
-
-      console.log("Cursos cargados", response);
-    })
+    });
   }
 
   filteredCourses(): Curso[] {

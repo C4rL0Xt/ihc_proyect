@@ -4,15 +4,17 @@
       <img src="assets/images/fisilogo.jpg" alt="Logo">
     </div>
     <div class="header-opciones">
-      <a routerLink="/home" [ngClass]="{'active': selectedOption === 'home'}" (click)="selectOption('home')">Home</a>
-      <a routerLink="/home/calendar" [ngClass]="{'active': selectedOption === 'calendar'}"
+      <a routerLink="/home" *ngIf="isAlumnoRol" [ngClass]="{'active': selectedOption === 'home'}"
+        (click)="selectOption('home')">Home</a>
+      <a routerLink="/home/calendar" *ngIf="isAlumnoRol" [ngClass]="{'active': selectedOption === 'calendar'}"
         (click)="selectOption('calendar')">Calendario</a>
-      <a routerLink="/home/cursos" [ngClass]="{'active': selectedOption === 'cursos'}"
+      <a routerLink="/home/cursos" *ngIf="isAlumnoRol" [ngClass]="{'active': selectedOption === 'cursos'}"
         (click)="selectOption('cursos')">Mis Cursos</a>
-      <a routerLink="/home/chat" [ngClass]="{'active': selectedOption === 'chat'}" (click)="selectOption('chat')">Mi
+      <a routerLink="/home/chat" *ngIf="isAlumnoRol" [ngClass]="{'active': selectedOption === 'chat'}"
+        (click)="selectOption('chat')">Mi
         chat</a>
-      <a routerLink="/home/cursoprofesor" [ngClass]="{'active': selectedOption === 'cursoprofesor'}" (click)="selectOption('cursoprofesor')">Profesor</a>
-
+      <a routerLink="/home/cursoprofesor" *ngIf="isProfesorRol"
+        [ngClass]="{'active': selectedOption === 'cursoprofesor'}" (click)="selectOption('cursoprofesor')">Profesor</a>
     </div>
   </div>
   <div class="header-right">
@@ -39,10 +41,10 @@
       </div>
     </div>
     <div class="header-user">
-      <div class="header-user-name">Carlos Daniel Espinoza Ramirez</div>
+      <div class="header-user-name">{{nombre}}</div>
       <a routerLink="/home/dashboard"><img class="header-user-icon" src="assets/images/user.svg" alt="User"></a>
     </div>
-    <div class="header-logout" routerLink="/">
+    <div class="header-logout" routerLink="/" (click)="salir()">
       <img class="header-logout-icon" src="assets/images/logout.svg" alt="Logout">
       <div class="header-logout-text">Salir</div>
     </div>

@@ -1,45 +1,37 @@
 import { Component, OnInit } from '@angular/core';
-import { Route, Router } from '@angular/router';
-import { ServicioProfesorService } from '../../services/servicio-profesor.service';
-import { SafeUrl, DomSanitizer } from '@angular/platform-browser';
 import { Curso } from 'src/app/core/models/curso.model';
-
+import { ProfesorService } from '../../services/profesor.service';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { CursoSService } from 'src/app/modules/cursos/servicios/cursoService/curso-s.service';
 
 @Component({
-  selector: 'app-curso-pagep',
-  templateUrl: './curso-pagep.component.html',
-  styleUrl: './curso-pagep.component.css'
+  selector: 'app-panelcursosprofesor',
+  templateUrl: './panelcursosprofesor.component.html',
+  styleUrl: './panelcursosprofesor.component.css'
 })
-export class CursoPagepComponent implements OnInit {
-  searchQuery: string = '';
-  selectedCycle: string = '';
-
-
+export class PanelcursosprofesorComponent implements OnInit {
 
   courses: Curso[] = [];
   randomColors: string[] = [];
-
+  selectedCycle: string = '';
+  searchQuery: string = '';
   fotoUrl: SafeUrl | null = null
-
-
   constructor(
-    private profesorService: ServicioProfesorService,
-    private router: Router,
-    private sanitizer: DomSanitizer) { }
+    private profesorService: ProfesorService,
+    private sanitizer: DomSanitizer,
+    private cursoService: CursoSService,
+  ) { }
 
   ngOnInit(): void {
+    console.log('Panel de cursos del profesor');
     this.loadCursos();
-
   }
 
   loadCursos(): void {
-    this.profesorService.getCursosAll().subscribe((response: Curso[]) => {
+    this.profesorService.getMyCourse().subscribe((response: Curso[]) => {
       this.courses = response;
-      this.courses.forEach((curso) => this.getFotoProfesor(curso));
       this.courses.forEach((curso) => this.assignRandomColors(curso));
-
-      console.log("Cursos cargados", response);
-    })
+    });
   }
 
   filteredCourses(): Curso[] {
@@ -49,10 +41,8 @@ export class CursoPagepComponent implements OnInit {
     );
   }
 
-
-
   getFotoProfesor(profesor: Curso): void {
-    this.profesorService.getFotoProfesor(profesor.profesorid).subscribe(
+    this.cursoService.getFotoProfesor(profesor.profesorid).subscribe(
       (blob: Blob) => {
         const objectURL = URL.createObjectURL(blob);
         profesor.foto = this.sanitizer.bypassSecurityTrustUrl(objectURL);

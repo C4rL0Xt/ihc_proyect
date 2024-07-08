@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 import { trigger, style, transition, animate } from '@angular/animations';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { ProfilService } from 'src/app/shared/services/profile-service/profil.service';
 
 @Component({
   selector: 'app-auth-page',
@@ -21,10 +22,7 @@ export class AuthPageComponent implements OnInit {
 
   errorSesion: boolean = false;
 
-  data = {
-    email: 'carlos.espinoza@unmsm.edu.pe',
-    password: '12345'
-  };
+
   errorSession: boolean = false;
   formLogin: FormGroup = new FormGroup({});
 
@@ -34,7 +32,8 @@ export class AuthPageComponent implements OnInit {
 
   constructor(private router: Router,
     private formBuilder: FormBuilder,
-    private authService: AuthService
+    private authService: AuthService,
+    private profileService: ProfilService
   ) { }
 
   ngOnInit(): void {
@@ -56,7 +55,14 @@ export class AuthPageComponent implements OnInit {
         console.log(response);
         console.log('token: ', response.token);
         localStorage.setItem('token', response.token);
-        this.router.navigate(['/home']);
+        localStorage.setItem('email', correo);
+        this.loadRolUser();
+        if (localStorage.getItem('role') === 'PROFESOR_ROL') {
+          this.router.navigate(['/prof']);
+        } else if (localStorage.getItem('role') === 'ALUMNO_ROL') {
+          this.router.navigate(['/home']);
+        }
+
       },
       (error) => {
         console.error('Error de login', error);
@@ -68,6 +74,13 @@ export class AuthPageComponent implements OnInit {
 
   togglePasswordVisibility() {
     this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password';
+  }
+
+  loadRolUser(): void {
+    this.profileService.getRol().subscribe(role => {
+      localStorage.setItem('role', role);
+      console.log('Rol de usuario: ', role);
+    });
   }
 
 

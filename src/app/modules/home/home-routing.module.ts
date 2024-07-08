@@ -6,7 +6,8 @@ import { InicioPageComponent } from './pages/inicio-page/inicio-page/inicio-page
 import { MainPageComponent } from '../cursos/page/main-page/main-page.component';
 import { ChatPageComponent } from '../chat/pages/chat-page/chat-page.component';
 import { CalendarPageComponent } from '../calendar/page/calendar-page/calendar-page.component';
-import { MainPagepComponent } from '../cursoprofesor/page/main-pagep/main-pagep.component';
+
+
 
 const routes: Routes = [
   {
@@ -28,11 +29,6 @@ const routes: Routes = [
   }, {
     path: '',
     component: InicioPageComponent
-  }, {
-    path: 'cursoprofesor',
-    component: MainPagepComponent,
-    loadChildren: () => import('../cursoprofesor/cursoprofesor.module').then(m => m.CursoprofesorModule)
-
   }
 ];
 

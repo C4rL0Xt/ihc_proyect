@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Notification, NotificationService } from '../../services/notification.service';
+import { ProfilService } from '../../services/profile-service/profil.service';
 
 @Component({
   selector: 'app-header',
@@ -12,14 +13,32 @@ export class HeaderComponent implements OnInit {
   isNotificationMenuOpen: boolean = false;
   notifications: Notification[] = [];
   hasUnreadNotifications: boolean = false;
+  isAlumnoRol: boolean = false;
+  isProfesorRol: boolean = false;
 
-  constructor(private notificationService: NotificationService) { }
+  nombre: string;
+
+  constructor(private notificationService: NotificationService,
+    private profileService: ProfilService
+  ) { }
 
   ngOnInit(): void {
     this.notificationService.notifications$.subscribe(notifications => {
       this.notifications = notifications;
       this.hasUnreadNotifications = notifications.some(notification => !notification.read);
     });
+
+    this.profileService.getNombre().subscribe((nombre: string) => {
+      this.nombre = nombre;
+    });
+
+    // Verificar el rol almacenado en LocalStorage
+    const role = localStorage.getItem('role');
+    if (role === 'ALUMNO_ROL') {
+      this.isAlumnoRol = true;
+    } else if (role === 'PROFESOR_ROL') {
+      this.isProfesorRol = true;
+    }
   }
 
   toggleNotificationMenu() {
@@ -33,8 +52,11 @@ export class HeaderComponent implements OnInit {
     this.selectedOption = option;
   }
 
-  logout() {
-    // Implement logout logic here
+  salir() {
+    localStorage.clear();
+
   }
+
+
 
 }
