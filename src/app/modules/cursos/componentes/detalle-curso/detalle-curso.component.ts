@@ -5,6 +5,7 @@ import { CursoSService } from '../../servicios/cursoService/curso-s.service';
 import { Curso } from 'src/app/core/models/curso.model';
 import { Semana } from 'src/app/core/models/semanas.model';
 import { MaterialE } from 'src/app/core/models/materialExtra.model';
+import { Alumnodto } from 'src/app/core/models/alumnodto.model';
 
 export interface Tile {
   color: string;
@@ -31,6 +32,8 @@ export class DetalleCursoComponent implements OnInit {
   materialesE: MaterialE[] = [];
   materialesOfCourse: MaterialE[] = [];
 
+  alumnos: Alumnodto[] = [];
+
 
   constructor(private route: ActivatedRoute, private coursesService: CursoSService) { }
 
@@ -41,10 +44,13 @@ export class DetalleCursoComponent implements OnInit {
       const nombreCurso = params.get('nombreCurso');
       if (nombreCurso) {
         this.getCurso(nombreCurso);
+
       } else {
         console.error('No course name in URL');
       }
     });
+
+
 
   }
 
@@ -54,12 +60,14 @@ export class DetalleCursoComponent implements OnInit {
       this.coursesService.getSemanasCurso(this.course).subscribe((data: Semana[]) => {
         this.semanas = data;
         console.log('Semanas:', this.semanas);
+        this.loadAlumnosCurso(nombreCurso);
+
       });
       console.log('Curso:', this.course);
     });
   }
 
-  loadMaterialesPorCurso():void {
+  loadMaterialesPorCurso(): void {
     this.route.paramMap.subscribe(params => {
       const idCurso = params.get('idCurso');
       if (idCurso) {
@@ -74,6 +82,18 @@ export class DetalleCursoComponent implements OnInit {
       this.materialesOfCourse = this.materialesE.filter(material => material.cursoid === idCurso);
       console.log("Materiales extra cargados", this.materialesOfCourse);
     });
+  }
+
+  loadAlumnosCurso(nombre: string): void {
+    console.log('Curso que pido para alu:', this.course.id_curso);
+    this.coursesService.getAlumnosByCurso(nombre).subscribe((data: any) => {
+      this.alumnos = data;
+      console.log('Alumnos:', this.alumnos);
+    });
+  }
+
+  sendEmail(email: string): void {
+    window.open(`mailto:${email}`);
   }
 
   sendMessage(email: string) {

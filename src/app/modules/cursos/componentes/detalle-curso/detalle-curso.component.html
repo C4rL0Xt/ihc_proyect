@@ -35,8 +35,21 @@
   </mat-tab>
 
   <mat-tab label="Personas">
-
+    <h1 class="encabezado">Lista de Estudiantes</h1>
+    <mat-card *ngFor="let alumno of alumnos" class="alumno-card">
+      <mat-card-content class="alumno-content">
+        <mat-icon class="alumno-icon">person</mat-icon>
+        <div class="alumno-info">
+          <h3>{{ alumno.nombreCompleto }}</h3>
+          <p>{{ alumno.correo }}</p>
+        </div>
+        <button mat-icon-button matTooltip="Enviar correo" (click)="sendEmail(alumno.correo)">
+          <mat-icon>email</mat-icon>
+        </button>
+      </mat-card-content>
+    </mat-card>
   </mat-tab>
+
 
   <mat-tab label="Recursos">
     <h1 class="encabezado">Recursos adicionales para el curso</h1>
@@ -52,7 +65,8 @@
         </mat-expansion-panel-header>
         <div *ngFor="let material of materialesOfCourse">
           <div *ngIf="material.tipo === 'Silabo'">
-            <h3><strong>{{material.descripcion}}:</strong></h3> <a [href]="material.ruta" target="_blank">{{material.ruta}}</a>
+            <h3><strong>{{material.descripcion}}:</strong></h3> <a [href]="material.ruta"
+              target="_blank">{{material.ruta}}</a>
           </div>
         </div>
       </mat-expansion-panel>
@@ -67,7 +81,8 @@
         </mat-expansion-panel-header>
         <div *ngFor="let material of materialesOfCourse">
           <div *ngIf="material.tipo === 'Libro'">
-            <h3><strong>{{material.descripcion}}:</strong></h3>  <a [href]="material.ruta" target="_blank">{{material.ruta}}</a>
+            <h3><strong>{{material.descripcion}}:</strong></h3> <a [href]="material.ruta"
+              target="_blank">{{material.ruta}}</a>
           </div>
         </div>
       </mat-expansion-panel>
@@ -82,7 +97,8 @@
         </mat-expansion-panel-header>
         <div *ngFor="let material of materialesOfCourse">
           <div *ngIf="material.tipo === 'Articulo'">
-            <h3><strong>{{material.descripcion}}:</strong></h3>  <a [href]="material.ruta" target="_blank">{{material.ruta}}</a>
+            <h3><strong>{{material.descripcion}}:</strong></h3> <a [href]="material.ruta"
+              target="_blank">{{material.ruta}}</a>
           </div>
         </div>
       </mat-expansion-panel>

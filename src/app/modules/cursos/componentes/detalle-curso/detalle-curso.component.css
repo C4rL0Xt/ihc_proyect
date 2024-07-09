@@ -1,33 +1,74 @@
+.mat-expansion-panel-header::after {
+  content: '\25BC';
+  /* Unicode character for downward-pointing triangle */
+  color: rgb(201, 201, 201);
+  position: absolute;
+  top: 50%;
+  right: 18px;
+  /* Adjust as needed */
+  transform: translateY(-50%);
+  transition: transform 0.3s ease;
+  /* Optional: smooth transition */
+}
 
-  .mat-expansion-panel-header::after {
-    content: '\25BC'; /* Unicode character for downward-pointing triangle */
-    color: rgb(201, 201, 201);
-    position: absolute;
-    top: 50%;
-    right: 18px; /* Adjust as needed */
-    transform: translateY(-50%);
-    transition: transform 0.3s ease; /* Optional: smooth transition */
-  }
-  
-  .mat-expansion-panel-header.mat-expanded::after {
-    content: '\25B2'; /* Unicode character for upward-pointing triangle */
-  }
-  
-  .selector-style {
-    padding-top: 10px;
-  }
-  
-  .acordeon-style {
-    margin-left: 20%;
-    margin-right: 20%;
-    max-height: 200vh;
-    overflow-y: hidden;
-  }
-  
-  .tam {
-    height: 75px;
-    font-size: 16px;
-  }
+.mat-expansion-panel-header.mat-expanded::after {
+  content: '\25B2';
+  /* Unicode character for upward-pointing triangle */
+}
+
+.selector-style {
+  padding-top: 10px;
+}
+
+.encabezado {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.alumno-card {
+  margin: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.alumno-content {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.alumno-icon {
+  font-size: 40px;
+  color: #3f51b5;
+  margin-right: 15px;
+}
+
+.alumno-info {
+  flex: 1;
+}
+
+.alumno-info h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.alumno-info p {
+  margin: 0;
+  color: #757575;
+}
+
+.acordeon-style {
+  margin-left: 20%;
+  margin-right: 20%;
+  max-height: 200vh;
+  overflow-y: hidden;
+}
+
+.tam {
+  height: 75px;
+  font-size: 16px;
+}
 
 
 .encabezado {

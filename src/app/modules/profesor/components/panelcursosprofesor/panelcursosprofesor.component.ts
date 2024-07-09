@@ -30,6 +30,7 @@ export class PanelcursosprofesorComponent implements OnInit {
   loadCursos(): void {
     this.profesorService.getMyCourse().subscribe((response: Curso[]) => {
       this.courses = response;
+      this.courses.forEach((curso) => this.getFotoProfesor(curso));
       this.courses.forEach((curso) => this.assignRandomColors(curso));
     });
   }

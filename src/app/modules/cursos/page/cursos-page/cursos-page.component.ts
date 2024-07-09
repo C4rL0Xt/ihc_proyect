@@ -39,6 +39,7 @@ export class CursosPageComponent implements OnInit {
   loadCursos(): void {
     this.cursoService.getMyCourses().subscribe((response: Curso[]) => {
       this.courses = response;
+      this.courses.forEach((curso) => this.getFotoProfesor(curso));
       this.courses.forEach((curso) => this.assignRandomColors(curso));
     });
   }

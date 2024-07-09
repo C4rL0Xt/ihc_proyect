@@ -13,16 +13,16 @@ const routes: Routes = [
   },
   {
     path: 'detalles/:idCurso/:nombreCurso',
-    component: DetalleCursoProfesorComponent
+    component: DetalleCursoComponent
 
   }, {
     path: '',
     redirectTo: 'all',
     pathMatch: 'full'
-  },{
+  }, {
     path: 'biblioteca',
     component: BibliotecaComponent
-  },{
+  }, {
     path: 'crearsemana',
     component: CrearSemanaComponent
 

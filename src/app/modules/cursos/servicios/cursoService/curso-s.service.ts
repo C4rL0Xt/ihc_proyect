@@ -35,6 +35,21 @@ export class CursoSService {
     )
   }
 
+  getAlumnosByCurso(id_curso: string): Observable<any[]> {
+    return this.httpClient.get(`${this.URL}/curso/correos/${id_curso}`).pipe(
+      map((response: any) => {
+        console.log("Respuesta completa de la API-correos: ", response);
+        return response;
+      }),
+      catchError((err) => {
+        alert('Error de conexion');
+        const { status, statusText } = err;
+        console.log('Algo paso revisar', [status, statusText]);
+        return of([]);
+      })
+    )
+  }
+
   getCursosAll(): Observable<any[]> {
     return this.httpClient.get(`${this.URL}/curso/listar/dto`).pipe(
       map((response: any) => {
