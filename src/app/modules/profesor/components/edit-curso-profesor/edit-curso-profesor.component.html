@@ -6,7 +6,7 @@
     <h1 class="encabezado">{{course?.nombre_curso}}</h1>
 
     <mat-accordion class="acordeon-style" *ngIf="semanas">
-      <mat-expansion-panel *ngFor="let week of semanas" hideToggle class="acordeon-style">
+      <mat-expansion-panel *ngFor="let week of semanas; let i = index" hideToggle class="acordeon-style">
 
         <mat-expansion-panel-header class="tam">
           <mat-panel-title>
@@ -15,7 +15,7 @@
           <mat-panel-description>
             {{week.tema}}
           </mat-panel-description>
-          <button mat-icon-button>
+          <button mat-icon-button (click)="openActualizarSemana(i, $event)">
             <mat-icon>edit</mat-icon>
           </button>
         </mat-expansion-panel-header>
@@ -24,25 +24,27 @@
           <p>{{week.descripcion}}</p>
           <br>
           <h3><strong>Tareas
-              <button mat-icon-button class="button-container">
-                <mat-icon class="custom-icon">edit</mat-icon>
-              </button>
+              
             </strong></h3>
 
           <ul>
-            <li *ngFor="let task of week.tareas">
-              Tarea: {{ task.descripcion}}
+            <li *ngFor="let task of week.tareas;let j = index">
+              Tarea {{j+1}}: {{ task.descripcion}}
+              <button mat-icon-button class="button-container" (click)="openActualizarTarea(task)">
+                <mat-icon class="custom-icon">edit</mat-icon>
+              </button>
 
             </li>
           </ul>
           <h3><strong>Materiales
-              <button mat-icon-button class="button-container">
-                <mat-icon class="custom-icon">edit</mat-icon>
-              </button>
+              
             </strong></h3>
           <ul>
-            <li *ngFor="let material of week.materiales">
-              {{ material.descripcion}} <a [href]="material.url" target="_blank">{{ material.tipo }}</a>
+            <li *ngFor="let material of week.materiales;let k = index">
+              {{ material.descripcion}}: <a [href]="material.url" target="_blank">{{ material.tipo }}</a>
+              <button mat-icon-button class="button-container" (click)="openActualizarMaterial(material)">
+                <mat-icon class="custom-icon">edit</mat-icon>
+              </button>
             </li>
           </ul>
         </div>

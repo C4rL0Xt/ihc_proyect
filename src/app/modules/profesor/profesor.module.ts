@@ -21,6 +21,9 @@ import { EditCursoProfesorComponent } from './components/edit-curso-profesor/edi
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { EditSemanaProfesorComponent } from './components/edit-semana-profesor/edit-semana-profesor.component';
+import { EditTareaProfesorComponent } from './components/edit-tarea-profesor/edit-tarea-profesor.component';
+import { EditMaterialProfesorComponent } from './components/edit-material-profesor/edit-material-profesor.component';
 
 
 @NgModule({
@@ -28,7 +31,10 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MainPageProfesorComponent,
     PanelcursosprofesorComponent,
 
-    EditCursoProfesorComponent
+    EditCursoProfesorComponent,
+      EditSemanaProfesorComponent,
+      EditTareaProfesorComponent,
+      EditMaterialProfesorComponent
   ],
   imports: [
     CommonModule,

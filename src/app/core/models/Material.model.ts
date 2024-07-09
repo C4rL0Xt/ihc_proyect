@@ -1,5 +1,6 @@
 export interface Material {
-  semanaid: number;
+  materialid?: number;
+  semanaid?: number;
   tipo: string;
   descripcion: string;
   url: string;

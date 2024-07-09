@@ -80,6 +80,21 @@ export class CursoSService {
       }));
   }
 
+  getSemanasCursoAlone(curso: Curso): Observable<any> {
+    console.log('Entraindnig Curso:', curso);
+    return this.httpClient.get(`${this.URL}/curso/semanasAlone/${curso.nombre_curso}`).pipe(
+      map((response: any) => {
+        console.log("Respuesta completa de la API - semanas: ", response);
+        return response;
+      }),
+      catchError((err) => {
+        alert('Error de conexion');
+        const { status, statusText } = err;
+        console.log('Algo paso revisar', [status, statusText]);
+        return of([]);
+      }));
+  }
+
   getCursoByNombre(nombreCurso: string): Observable<any> {
     return this.httpClient.get(`${this.URL}/curso/buscar/${nombreCurso}`).pipe(
       map((response: any) => {

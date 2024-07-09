@@ -1,5 +1,6 @@
 export interface Tarea {
-  semanaid: number;
+  tareaid?: number;
+  semanaid?: number;
   descripcion: string;
   nota: number;
 }

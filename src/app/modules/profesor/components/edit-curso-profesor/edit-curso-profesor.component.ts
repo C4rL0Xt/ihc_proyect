@@ -6,6 +6,12 @@ import { MaterialE } from 'src/app/core/models/materialExtra.model';
 import { Semana } from 'src/app/core/models/semanas.model';
 import { CrearSemanaComponent } from 'src/app/modules/cursos/componentes/crear-semana/crear-semana.component';
 import { CursoSService } from 'src/app/modules/cursos/servicios/cursoService/curso-s.service';
+import { EditSemanaProfesorComponent } from '../edit-semana-profesor/edit-semana-profesor.component';
+import { SemanaAlone } from 'src/app/core/models/semanaAlone.model';
+import { EditTareaProfesorComponent } from '../edit-tarea-profesor/edit-tarea-profesor.component';
+import { Tarea } from 'src/app/core/models/tarea.model';
+import { Material } from 'src/app/core/models/Material.model';
+import { EditMaterialProfesorComponent } from '../edit-material-profesor/edit-material-profesor.component';
 
 @Component({
   selector: 'app-edit-curso-profesor',
@@ -19,7 +25,7 @@ export class EditCursoProfesorComponent implements OnInit {
   nombreCurso: string | null = null;
   idDeCurso: string | null = null;
   semanas: Semana[] = [];
-
+  semanasAlone: SemanaAlone[] = [];
   material: MaterialE | undefined;
   courses: Curso[] = [];
   materialesE: MaterialE[] = [];
@@ -33,7 +39,11 @@ export class EditCursoProfesorComponent implements OnInit {
   ngOnInit(): void {
 
     this.loadMaterialesPorCurso();
+    this.cargarParam();
 
+  }
+
+  cargarParam(): void {
     this.route.paramMap.subscribe(params => {
       this.idDeCurso = params.get('idCurso');
       const nombreCurso = params.get('nombreCurso');
@@ -50,10 +60,17 @@ export class EditCursoProfesorComponent implements OnInit {
   getCurso(nombreCurso: string): void {
     this.coursesService.getCursoByNombre(nombreCurso).subscribe((data: Curso) => {
       this.course = data;
+
       this.coursesService.getSemanasCurso(this.course).subscribe((data: Semana[]) => {
         this.semanas = data;
         console.log('Semanas:', this.semanas);
       });
+
+      this.coursesService.getSemanasCursoAlone(this.course).subscribe((data: SemanaAlone[]) => {
+        this.semanasAlone = data;
+        console.log('Semanas:', this.semanasAlone);
+      });
+
       console.log('Curso:', this.course);
     });
   }
@@ -92,10 +109,70 @@ export class EditCursoProfesorComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
+      this.loadMaterialesPorCurso();
+      this.cargarParam();
       if (result) {
         // Aquí puedes manejar el resultado, como añadir la nueva semana a la lista
         console.log('Nueva semana creada:', result);
         this.getCurso(this.nombre_curso || '');
+
+
+      }
+    });
+  }
+
+  openActualizarSemana(semanaIndex: number, event: Event) {
+    event.stopPropagation(); // Detener la propagación del evento
+  
+    const semanaAlone = this.semanasAlone[semanaIndex];
+    if (semanaAlone) {
+      const dialogSem = this.dialog.open(EditSemanaProfesorComponent, {
+        width: '700px',
+        height: '400px',
+        data: { cursoId: this.idDeCurso, semana: semanaAlone }
+      });
+  
+      dialogSem.afterClosed().subscribe(result => {
+        this.loadMaterialesPorCurso();
+        this.cargarParam();
+        if (result) {
+          console.log('Semana actualizada', result);
+          this.getCurso(this.nombre_curso || '');
+        }
+      });
+    } else {
+      console.error('No ID for this week');
+    }
+  }
+
+  openActualizarTarea(tarea: Tarea) : void{
+    const dialogRef = this.dialog.open(EditTareaProfesorComponent, {
+      width: '700px',
+      height: '400px',
+      data: { tarea: tarea}
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      this.loadMaterialesPorCurso();
+        this.cargarParam();
+      if (result) {
+        console.log('Tareas actualizada', result);
+      }
+    });
+  }
+
+  openActualizarMaterial(material: Material) : void{
+    const dial = this.dialog.open(EditMaterialProfesorComponent, {
+      width: '700px',
+      height: '400px',
+      data: { material: material}
+    });
+  
+    dial.afterClosed().subscribe(result => {
+      this.loadMaterialesPorCurso();
+        this.cargarParam();
+      if (result) {
+        console.log('Material actualizado', result);
       }
     });
   }

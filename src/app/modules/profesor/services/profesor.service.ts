@@ -1,7 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map, Observable, of } from 'rxjs';
+import { Semana } from 'src/app/core/models/semanas.model';
+import { Tarea } from 'src/app/core/models/tarea.model';
 import { environment } from 'src/environments/environment';
+import { SemanaAlone } from 'src/app/core/models/semanaAlone.model';
+import { Material } from 'src/app/core/models/Material.model';
 
 @Injectable({
   providedIn: 'root'
@@ -27,5 +31,17 @@ export class ProfesorService {
         return of([]);
       })
     );
+  }
+
+  updateSemana(sem: SemanaAlone): Observable<any> {
+    return this.http.put(`${this.URL}/curso/actualizar-semana`, sem);
+  }
+
+  updateTarea(tarea: Tarea): Observable<any> {
+    return this.http.put(`${this.URL}/curso/actualizar-tarea`, tarea);
+  }
+
+  updateMaterial(material: Material): Observable<any> {
+    return this.http.put(`${this.URL}/curso/actualizar-material`, material);
   }
 }
